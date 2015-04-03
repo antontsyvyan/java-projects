@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ImpDetails" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="870b7889-c27c-4bbf-807d-874060e9fd95">
+	<property name="ireport.zoom" value="2.5937424601000045"/>
+	<property name="ireport.x" value="460"/>
+	<property name="ireport.y" value="879"/>
+	<parameter name="a3" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="db" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="prefix" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{db}== null || $P{db}.isEmpty()==true || $P{db}.equals("") ? "gpa.": $P{db}+"."]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from $P!{prefix}femutu where femutu_a3=$P{a3}]]>
+	</queryString>
+	<field name="FEED_SYS_FEMUTU" class="java.lang.String"/>
+	<field name="FEMUTU_IN_OUT_BOUND" class="java.lang.String"/>
+	<field name="FEMUTU_JOB_NO" class="java.lang.String"/>
+	<field name="FEMUTU_LINE_NO" class="java.lang.Integer"/>
+	<field name="FEMUTU_TRANS_CODE" class="java.lang.String"/>
+	<field name="FEMUTU_BON_WRH_TYPE" class="java.lang.String"/>
+	<field name="FEMUTU_STAT_GDS" class="java.lang.String"/>
+	<field name="FEMUTU_NAW_NO" class="java.lang.String"/>
+	<field name="FEMUTU_DOC_TYPE" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_DOC_NO" class="java.lang.String"/>
+	<field name="FEMUTU_DT_ISSUE_DOC" class="java.sql.Date"/>
+	<field name="FEMUTU_TG_IND" class="java.lang.String"/>
+	<field name="FEMUTU_PERIOD" class="java.lang.Integer"/>
+	<field name="FEMUTU_MOD" class="java.lang.String"/>
+	<field name="FEMUTU_PLACE_ISSUE_DOC" class="java.lang.String"/>
+	<field name="FEMUTU_DOC_VAL" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_ART_NO" class="java.lang.String"/>
+	<field name="FEMUTU_ART_DESC" class="java.lang.String"/>
+	<field name="FEMUTU_TARIFF_CODE" class="java.lang.String"/>
+	<field name="FEMUTU_IMP_CERTIFICATE" class="java.lang.String"/>
+	<field name="FEMUTU_INVNO" class="java.lang.String"/>
+	<field name="FEMUTU_INV_LN_NO" class="java.lang.Integer"/>
+	<field name="FEMUTU_INV_DATE" class="java.sql.Date"/>
+	<field name="FEMUTU_KIND_CODE_D11" class="java.lang.String"/>
+	<field name="FEMUTU_NO_PCS_D12" class="java.lang.Integer"/>
+	<field name="FEMUTU_NT_WGT" class="java.lang.Integer"/>
+	<field name="FEMUTU_LOC" class="java.lang.String"/>
+	<field name="FEMUTU_SPARE_FLD_D15" class="java.lang.String"/>
+	<field name="CT_CODE_ORG" class="java.lang.String"/>
+	<field name="CT_CODE_PROV" class="java.lang.String"/>
+	<field name="FEMUTU_PREF_CODE1" class="java.lang.String"/>
+	<field name="FEMUTU_PREF_CODE2" class="java.lang.String"/>
+	<field name="FEMUTU_NO_ADD_UNITS" class="java.lang.Integer"/>
+	<field name="FEMUTU_ADD_UNITS" class="java.lang.String"/>
+	<field name="FEMUTU_INV_PROF" class="java.lang.String"/>
+	<field name="FEMUTU_INV_PROF_LINE" class="java.lang.Integer"/>
+	<field name="FEMUTU_INV_VAL" class="java.math.BigDecimal"/>
+	<field name="CURR_CODE_FEMUTU" class="java.lang.String"/>
+	<field name="FEMUTU_EX_RATE" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_INV_PROF_DATE" class="java.sql.Date"/>
+	<field name="FEMUTU_COM_PREF" class="java.lang.String"/>
+	<field name="FEMUTU_BOX37" class="java.lang.String"/>
+	<field name="FEMUTU_TRANS_TYPE" class="java.lang.String"/>
+	<field name="FEMUTU_RELATION" class="java.lang.String"/>
+	<field name="FEMUTU_RESTRIC" class="java.lang.String"/>
+	<field name="FEMUTU_LIC_FEE" class="java.lang.String"/>
+	<field name="FEMUTU_CALC_METHOD" class="java.lang.String"/>
+	<field name="FEMUTU_VAL_DET" class="java.lang.String"/>
+	<field name="FEMUTU_TARIFF_CONT_REQ" class="java.lang.String"/>
+	<field name="MOT_CODE_FEMUTU" class="java.lang.Integer"/>
+	<field name="FEMUTU_CONT" class="java.lang.Integer"/>
+	<field name="NAW_CODE_CM" class="java.lang.String"/>
+	<field name="FEMUTU_SPEC_INDI" class="java.lang.String"/>
+	<field name="FEMUTU_STAN_PERC_DUTIES" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_TRANS_CODE_K7" class="java.lang.String"/>
+	<field name="FEMUTU_TRANS_NO" class="java.lang.String"/>
+	<field name="FEMUTU_TRANS_DATE" class="java.sql.Date"/>
+	<field name="FEMUTU_NT_WGT_K13" class="java.lang.Integer"/>
+	<field name="FEMUTU_ADD_FLDK15" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLDK16" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLDK17" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLDK18" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLDK19" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLDK20" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLDK21" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLDK22" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLDK23" class="java.lang.String"/>
+	<field name="FEMUTU_AUTH_NO" class="java.lang.String"/>
+	<field name="FEMUTU_IMP_LIC" class="java.lang.String"/>
+	<field name="FEMUTU_IMP_LIC_DATE" class="java.sql.Date"/>
+	<field name="FEMUTU_SCO_IND" class="java.lang.String"/>
+	<field name="FEMUTU_PRELIM_IND" class="java.lang.String"/>
+	<field name="FEMUTU_CERTIFICATE_NO" class="java.lang.String"/>
+	<field name="NAW_CODE_CONS" class="java.lang.String"/>
+	<field name="FEMUTU_CONS_NAME" class="java.lang.String"/>
+	<field name="FEMUTU_CONS_CITY" class="java.lang.String"/>
+	<field name="CONS_VAT_NO" class="java.lang.String"/>
+	<field name="FEMUTU_VERIFY_BY_CUST" class="java.lang.String"/>
+	<field name="FEMUTU_INCO_TERMS" class="java.lang.String"/>
+	<field name="FEMUTU_DELIV_PLACE" class="java.lang.String"/>
+	<field name="FEMUTU_FRT_AMT_EUR" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_INS_AMT_EUR" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_ADD_DED_EUR" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_CUST_VAL_EUR" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_IMP_DUT_PERC" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_AMT_RELIEF" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_CUST_DUT_SPEC" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_CUST_DUTIES" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_DOC_NO" class="java.lang.String"/>
+	<field name="FEMUTU_TYPE_OF_CHRGS" class="java.lang.String"/>
+	<field name="FEMUTU_MANU" class="java.lang.String"/>
+	<field name="FEMUTU_AMT_OF_CHRGS" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_AGRI_LEV" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_VAT_AMT" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_VAT_CONV_VAL" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_EXCISE_CODE_G1" class="java.lang.Integer"/>
+	<field name="FEMUTU_VAT_PREF_CODE" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_EXCISE_AMT_G1" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_EXCISE_CODE_G3" class="java.lang.Integer"/>
+	<field name="FEMUTU_EXCISE_AMT_G3" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_EXCISE_CODE_G5" class="java.lang.Integer"/>
+	<field name="FEMUTU_EXCISE_AMT_G5" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_EXCISE_CODE_G7" class="java.lang.Integer"/>
+	<field name="FEMUTU_EXCISE_AMT_G7" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_EXT_PERC" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_ACT_ALCH_STE" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_ALC_FREE_LIT" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_LTS_OIL" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_PER_KG" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_PURE_ALC_LTS" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_TRAN_DOC" class="java.lang.String"/>
+	<field name="FEMUTU_PACK_UNIT" class="java.lang.String"/>
+	<field name="FEMUTU_NO_OF_PACK" class="java.lang.Integer"/>
+	<field name="FEMUTU_INV_SLS" class="java.lang.String"/>
+	<field name="FEMUTU_INV_SLS_LINE" class="java.lang.Integer"/>
+	<field name="FEMUTU_INV_SLS_DATE" class="java.sql.Date"/>
+	<field name="FEMUTU_QUAN1" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_QUAN2" class="java.math.BigDecimal"/>
+	<field name="FEMUTU_EXP_LIC_NUM" class="java.lang.String"/>
+	<field name="FEMUTU_EXP_LIC_DATE" class="java.sql.Date"/>
+	<field name="CT_CODE_DEST" class="java.lang.String"/>
+	<field name="FEMUTU_BASE_CODE2" class="java.lang.String"/>
+	<field name="FEMUTU_DOC_CODE1" class="java.lang.String"/>
+	<field name="FEMUTU_DOC_CODE2" class="java.lang.String"/>
+	<field name="FEMUTU_DOC_CODE3" class="java.lang.String"/>
+	<field name="FEMUTU_DOC_CODE4" class="java.lang.String"/>
+	<field name="FEMUTU_BASE_CODE1" class="java.lang.String"/>
+	<field name="FEMUTU_MTH_PAY" class="java.lang.String"/>
+	<field name="FEMTU_STAT" class="java.lang.String"/>
+	<field name="FEMUTU_MEM_STATE" class="java.lang.String"/>
+	<field name="FEMUTU_STAT" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLD_M8" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLD_M9" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLD_M10" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLD_M11" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLD_M12" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLD_M13" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLD_M14" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLD_M15" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_FLD_M16" class="java.lang.String"/>
+	<field name="FEMUTU_CONS_ADDR" class="java.lang.String"/>
+	<field name="FEMUTU_ADD_DOC_CODE" class="java.lang.String"/>
+	<field name="FEMUTU_A3" class="java.lang.String"/>
+	<field name="FEMUTU_CUST_REF1" class="java.lang.String"/>
+	<field name="FEMUTU_CUST_REF2" class="java.lang.String"/>
+	<field name="FEMUTU_CUST_REF3" class="java.lang.String"/>
+	<field name="FEMUTU_CUST_REF4" class="java.lang.String"/>
+	<variable name="Titel" class="java.lang.String">
+		<initialValueExpression><![CDATA["Details line: "+$P{a3}]]></initialValueExpression>
+	</variable>
+	<variable name="variable1" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement uuid="76bacac1-5d80-4ef0-930d-8f6ae2b7a0b6" x="0" y="0" width="752" height="20"/>
+				<textElement>
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{Titel}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="a519ad5f-dd1a-4931-b03c-bc67b67b67c0" x="0" y="20" width="752" height="1"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="466" splitType="Stretch">
+			<line>
+				<reportElement uuid="8aa83be9-bca5-4438-9333-dd9a63f02d8b" x="33" y="31" width="1" height="64"/>
+			</line>
+			<line>
+				<reportElement uuid="9a7a31a5-fa74-4367-b41c-9e19ec85c4cc" x="102" y="29" width="219" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="911864d7-04ca-4b0c-9532-e2dd0ae63566" x="33" y="30" width="11" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="4e42ca43-adaa-400e-a6b4-ea8d168de8c4" x="51" y="20" width="51" height="13"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["A-Block"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="46cb25e1-9957-4905-b2fa-5921914bb43a" x="46" y="40" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["A1 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c2591d78-f595-488f-aa04-4a5f4b05ec73" x="46" y="67" width="33" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["A2 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="aa0469e4-d7b1-461f-b4f4-a6b1a681763c" x="188" y="53" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["A3 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c8a3582c-d72a-4edd-b7aa-cdac35830134" x="376" y="47" width="33" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["B1 :"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="b3298fd4-e3fe-4a71-bea4-0f3cb37e1221" x="363" y="29" width="11" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="1de2611c-6705-4464-a055-6630ea701c47" x="432" y="30" width="249" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="da967d58-8bda-4f1f-97e6-ab29b3932f91" x="376" y="68" width="33" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["B2 :"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="06937f62-45b0-4873-81de-2a54a1fc25f1" x="363" y="29" width="1" height="65"/>
+			</line>
+			<textField>
+				<reportElement uuid="05d3703c-5852-45e5-902d-a0f417c90d68" x="529" y="47" width="33" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["B3 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="504d2122-539b-454f-a218-3bb95367409b" x="382" y="22" width="50" height="18"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["B-Block"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8d06c60f-9461-47b7-9d10-3e67eb770625" x="529" y="69" width="33" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["B4 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56135a9b-8bcc-43cd-80de-0a34399d9525" x="79" y="40" width="109" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_PERIOD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9d2865b2-f945-4c10-aed4-54f39353d7c9" x="79" y="67" width="137" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_TRANS_CODE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2be8eb4d-28fb-4363-9bf0-3fb5c1f23992" x="221" y="53" width="91" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_A3}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="a7f32b5c-8ee6-4348-9b80-1ea59a51e052" x="34" y="94" width="287" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="625dca16-c9b6-48a3-b296-b21bbf3b8656" x="320" y="29" width="1" height="65"/>
+			</line>
+			<textField>
+				<reportElement uuid="29c152bc-e10a-44e4-a514-3d33b02cf91b" x="409" y="48" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_DOC_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0e161bf8-8413-48ef-9316-8fe6b70a2917" x="409" y="68" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_DOC_NO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy-MM-dd">
+				<reportElement uuid="75fc8ccb-9592-4315-86ee-5d3a2c5cb7c0" x="562" y="69" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_DT_ISSUE_DOC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8833b371-69d3-4f66-a3c1-f92a54a557d8" x="562" y="47" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_PLACE_ISSUE_DOC}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="8b21210d-9e56-4ee4-affc-a6bb131ab160" x="680" y="31" width="1" height="63"/>
+			</line>
+			<line>
+				<reportElement uuid="331b6262-a2fb-4090-8df8-7ae9aeb7d42c" x="364" y="94" width="317" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="ede35bc7-2b13-4b4b-b67f-fafc3f561e8c" x="94" y="117" width="587" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="3a974c92-e867-4be9-9d27-45be36f76862" x="46" y="111" width="51" height="13"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["E-Block"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="e00beb95-dfdf-49bb-b36e-3f2b5c85f56f" x="33" y="118" width="1" height="246"/>
+			</line>
+			<line>
+				<reportElement uuid="c728f3f5-514a-4018-8dda-f3f144e946e2" x="33" y="117" width="11" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="5bcd4749-52d0-4c25-aea1-f8523c464c2a" x="681" y="117" width="1" height="247"/>
+			</line>
+			<textField>
+				<reportElement uuid="52ff8ce3-8cb5-4cdd-ae12-027ca7324e94" x="45" y="134" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E1 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="403487c4-d747-44a0-a618-bf3e189f5b34" x="45" y="151" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E2 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ec26f6f0-0df3-4063-8fc3-85d75b4526e7" x="45" y="168" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E3 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a86c893a-6b96-4217-a0ef-e8db5c9a4888" x="45" y="186" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E4 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5c9e6e10-adcd-4b31-9602-f6f21a09af37" x="45" y="201" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E5 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8144c420-5c5f-4f67-9a62-467e52c7630a" x="45" y="218" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E6 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="08388257-1de3-4423-8b2b-c657490569dd" x="45" y="253" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E8 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8544910b-fac3-4a20-8e8a-bbdfabad34e5" x="45" y="235" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E7 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7f74f073-deac-4a74-85c4-997f1e3292a0" x="45" y="283" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E10 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="704f5619-c0b8-4b88-843f-1c5423691f33" x="45" y="335" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E13 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c3fd1bca-6e31-4381-92fe-3e58788aac3a" x="45" y="317" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E12:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1c08034c-6325-4a7f-8e34-b431793a5c02" x="45" y="300" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E11 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7b685aea-2005-43d3-8a9c-f43678695e44" x="45" y="268" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E9 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0cbb56cc-4240-49bf-a138-ea67b5281daf" x="185" y="317" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E25 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4a67ccd2-ba3a-40f2-9d64-9a776a427860" x="185" y="253" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E21 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9660274e-bf71-4c3b-9d84-4a12fecf7d90" x="185" y="201" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E18 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4b8504a3-e85d-42b7-8efa-74517febebb2" x="185" y="300" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E24 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="17aebd9b-fad3-4edb-95e1-bb0891381278" x="185" y="235" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E20 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1532146e-7007-4fe8-b689-2b720e2311cc" x="185" y="134" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E14 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="36ab3e92-672b-4dcf-9b61-1470c6e1390d" x="185" y="218" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E19 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a8d9d9af-7146-4baf-8752-51972a64c371" x="185" y="151" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E15 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="42f77c25-2457-43ef-ab90-fa695be1c4b6" x="185" y="268" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E22 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="545f5715-c851-4f5f-906b-bc73ae3804b9" x="185" y="186" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E17 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a3e15ba0-7c6d-4105-adb8-71301c1fcfe3" x="185" y="335" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E26 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="806f6e89-0157-4e68-814d-2ba877f67669" x="185" y="283" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E23 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f3c60884-6958-47ab-bc44-79a9a350a9ae" x="185" y="168" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E16 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b52921d0-0069-4710-b4ca-99e940592a39" x="376" y="317" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E38 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f95bf66b-ed3b-47a3-bb78-dae1daf43d31" x="376" y="253" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E34 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6f3aaeb6-d1bb-46fc-b5be-23fd04324db2" x="376" y="201" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E31 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="82f765d9-f820-45d9-b04d-cb6e2fec0a72" x="376" y="300" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E37 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d7d0cf8e-5503-4782-ac6a-2ce02433cb86" x="376" y="235" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E33 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="464bab5d-a0e2-4159-afd1-2db74da4cfc4" x="376" y="134" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E27 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7144e2ff-858f-4a69-a364-9e985fa3eb55" x="376" y="218" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E32 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="02f7b0c8-8896-4bf9-873e-cd3698208abe" x="376" y="151" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E28 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b8fadd21-e078-466c-9e88-cd61a56039e8" x="376" y="268" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E35 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3239182d-dc94-4114-b35a-63ab5efde9ca" x="376" y="186" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E30 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4021beef-140a-41bf-b892-611351d5299f" x="376" y="335" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E39 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="62188b47-16fe-4b0e-b168-e06e05b3c7e0" x="376" y="283" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E36 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="60f809b8-30d6-4ed2-b6af-deb3980c2059" x="376" y="168" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E29 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="60e80872-362d-4b66-bb01-60ea8205548b" x="529" y="254" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E47 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5dc988cf-94e1-43fb-8cf6-9ceb8ec2ddb9" x="529" y="203" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E44 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f64ddf3a-428f-4a6f-a886-d8aa3e0144a4" x="529" y="237" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E46 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c021dfcc-2498-47af-8261-955bd154ee6d" x="529" y="136" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E40 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="23385016-2490-47a6-bafd-c28549966f7b" x="529" y="220" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E45 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ef817537-9242-48b9-a66c-19b0a7814d3a" x="529" y="153" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E41 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="110417a9-08b7-4f23-98f9-974c004c9c2f" x="529" y="270" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E48 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1013c984-1c11-4f63-80a8-853cfae03f9c" x="529" y="188" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E43 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0259d6ac-1149-458e-862c-fb58a6eeea23" x="529" y="285" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E49 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="43aaaa21-a424-4a9d-8224-cb6007f31890" x="529" y="170" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["E42 :"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="46e605f9-98a4-4f4c-8ebd-575974053c5b" x="34" y="363" width="648" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="8de1dff7-eedb-43f9-aa53-3ec2ae8eaa5a" x="78" y="134" width="105" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CT_CODE_ORG}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9c57f0c5-27dc-4a1a-a61b-4cafb7822ecd" x="78" y="151" width="106" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CT_CODE_PROV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="39f00279-deee-4d21-b4f4-4d252ad82de7" x="78" y="169" width="105" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_PREF_CODE1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="08823a17-82c3-440a-9796-8fe550ac0543" x="78" y="186" width="104" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_PREF_CODE2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c15682b1-bdee-44c3-925b-55b101395b8a" x="78" y="201" width="104" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_AUTH_NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cbd8252a-f36b-401e-944b-005b1c4c717d" x="78" y="218" width="104" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_CERTIFICATE_NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3837b70c-e1e6-40d1-b7db-b2227b987c2d" x="78" y="235" width="104" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_IMP_LIC}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy-MM-dd" isBlankWhenNull="true">
+				<reportElement uuid="2d5b2732-e0f1-44cf-84a3-8b5623219663" x="78" y="253" width="105" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_IMP_LIC_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7f755828-b8ff-46c1-b3a6-8c362944ff7a" x="78" y="268" width="105" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_SCO_IND}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ecb94bca-d20f-4981-9da3-9ed4b8611be1" x="78" y="285" width="104" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_PRELIM_IND}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cf23df7f-2881-467f-bfbc-a3a0e1ebcd22" x="78" y="317" width="105" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_CONS_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a7f4e6ba-9e8d-4044-9800-915dcfda96a0" x="216" y="134" width="158" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_CONS_CITY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="32e346a6-f047-4ffb-81e9-e70746ca91af" x="78" y="335" width="106" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_CONS_ADDR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="30a21c7d-1f4e-433a-a9dd-afe7c1aa60b7" x="216" y="151" width="158" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CONS_VAT_NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4c5d9be8-e5f0-42ab-9c01-4d3bbbaa0859" x="216" y="169" width="158" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_ART_NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8c9a169c-3b8e-483f-8d72-86601037ea76" x="216" y="186" width="158" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_TARIFF_CODE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="19e177db-7c1d-44a1-874a-481c01ad6383" x="216" y="201" width="158" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_VERIFY_BY_CUST}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3951c17b-3fb9-4e59-9273-67420e308fdb" x="216" y="218" width="158" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_ADD_UNITS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="744ccdce-1992-48db-abc0-142c92d264c2" x="216" y="235" width="158" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_NO_ADD_UNITS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1d7b94b7-be9b-440b-ae05-9f8d65742cb3" x="216" y="253" width="158" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_INV_PROF}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f6a422d8-ca00-4734-babc-261123744161" x="216" y="268" width="158" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_INV_PROF_LINE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="196d8d08-058f-43c2-8f21-bd02b71fcf60" x="216" y="283" width="157" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_INCO_TERMS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="29b445eb-8275-4632-a31a-82844e92f53c" x="216" y="298" width="158" height="17"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_DELIV_PLACE}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="f95ea090-bdb2-4f3e-843a-b41e9d72ce71" x="216" y="317" width="158" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_INV_VAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6b445678-44c4-4f3d-8f76-d4b3e08f29e1" x="216" y="335" width="158" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CURR_CODE_FEMUTU}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="aed077c7-bce8-4032-a377-0e6d9ce1beca" x="410" y="134" width="115" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_EX_RATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="010b138c-ade4-4344-a5cd-9f366d159cbb" x="410" y="151" width="115" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_FRT_AMT_EUR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="290bd079-cfc9-4b94-9b03-d5de4efb2942" x="410" y="166" width="116" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_INS_AMT_EUR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1b5844a5-6a4c-42e9-b3b8-0fe0e98816bc" x="410" y="186" width="116" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_ADD_DED_EUR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e78d4ddb-c412-4aeb-bdaf-6bafc49abef2" x="410" y="201" width="115" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_CUST_VAL_EUR}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="afcb0793-41bc-4453-be81-702a2703df3e" x="410" y="218" width="116" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[(!$F{FEMUTU_IMP_DUT_PERC}.equals("0"))?$F{FEMUTU_IMP_DUT_PERC}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2c39fa83-6eb3-473e-8df4-6818e4c4622b" x="410" y="235" width="116" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_AMT_RELIEF}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c3db90b8-5ea5-4118-95cb-e8599317a3a9" x="410" y="253" width="116" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_CUST_DUT_SPEC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c4d5fbce-5cef-47bb-a727-35815f4c95bf" x="410" y="268" width="115" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_CUST_DUTIES}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="975d40de-18c3-448c-8c2f-7823cc7dfca2" x="410" y="283" width="116" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_BOX37}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy-MM-dd" isBlankWhenNull="true">
+				<reportElement uuid="7170188d-fd82-4370-a53f-79ab78e7d78d" x="410" y="298" width="116" height="17"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_INV_PROF_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0e126f5c-5c58-4bd3-8fe5-0628d214a90a" x="410" y="317" width="115" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_ADD_DOC_CODE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ce9e5cad-e155-443c-b8ca-6ad5b81b377b" x="410" y="335" width="115" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_ADD_DOC_NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="79a03af8-059a-4d37-805c-25c24c912f27" x="562" y="136" width="118" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_COM_PREF}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8554f52d-6cd7-4faa-9645-a874f983015a" x="562" y="153" width="117" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_TRANS_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3e21ed26-d05d-41ce-ad44-2eeaa276e57d" x="562" y="166" width="116" height="19"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_RELATION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="231e3db5-bf4c-453f-a2ab-d9c7f4d66e37" x="562" y="188" width="117" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_RESTRIC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7765281c-c917-4548-b22f-5b59f6c18e88" x="562" y="203" width="117" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_LIC_FEE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8f482aad-8550-40b8-ba61-c95ee5439a1a" x="562" y="220" width="117" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_CALC_METHOD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="eae67dc0-18be-4514-8816-8e99eabdb647" x="562" y="237" width="117" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_VAL_DET}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="15fbce01-e789-425c-9c54-d345085e49c2" x="562" y="254" width="117" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_TARIFF_CONT_REQ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f359ae91-0eb9-4a99-b2ce-f0a0ddec9dd9" x="562" y="270" width="118" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{MOT_CODE_FEMUTU}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="92fe2258-b767-4518-bce3-04e70179eb30" x="562" y="285" width="118" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_CONT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b30df488-ca86-45c5-801e-c659ba9d884a" x="51" y="378" width="51" height="13"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["H-Block"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="bc3a2682-8190-44da-8381-c56718a90eed" x="32" y="384" width="17" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="3be3bbb5-32f8-41a6-84e0-3ff49746e9d3" x="102" y="384" width="577" height="2"/>
+			</line>
+			<line>
+				<reportElement uuid="8a2edc9b-7439-49fd-8d36-7c46317fe7f6" x="32" y="384" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement uuid="7561bcda-1e48-4948-8de3-57454e865013" x="679" y="386" width="1" height="22"/>
+			</line>
+			<textField>
+				<reportElement uuid="8c81d0c8-9758-4cbe-aa1f-c5213e366348" x="185" y="391" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["H14 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9f9958ea-a169-4f85-b563-7ffba53b1e7b" x="529" y="390" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["H16 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d994b933-59a0-4a41-af41-c2d4e3f474e4" x="45" y="391" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["H13 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2e84245a-1570-4635-990a-101059abc39d" x="376" y="390" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["H15 :"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="709b538d-417f-46fa-933b-86ec2b005ef7" x="32" y="407" width="647" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="b8cc4728-4446-4b06-b92d-73b45903f19f" x="185" y="429" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["M3 :"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="a2e989d1-1768-4d78-b612-6ec6f21f117e" x="679" y="424" width="1" height="39"/>
+			</line>
+			<textField>
+				<reportElement uuid="e590dcc6-d5a2-4e9a-ac9e-921bd3870862" x="51" y="416" width="51" height="13"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["M-Block"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="f6b9ac56-c641-4029-a1a0-0d1dcb8ab59b" x="32" y="422" width="1" height="41"/>
+			</line>
+			<textField>
+				<reportElement uuid="8f0f355d-48ce-4ad8-94e2-359affc76ada" x="45" y="429" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["M1 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="01b803c1-2dc0-4d27-82cb-232c162aa8e7" x="376" y="429" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["M5 :"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="14e646fa-a3fe-4587-a08d-4c227a8f425b" x="102" y="422" width="577" height="2"/>
+			</line>
+			<line>
+				<reportElement uuid="4479578d-ce93-4e8a-b3ce-2765273e744b" x="32" y="422" width="17" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="46cf8313-81ac-4206-b365-0a9fa93dbb48" x="32" y="462" width="648" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="100b5957-c7c6-40c2-a069-711f85c4f32b" x="45" y="446" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["M2 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f87c0979-9a48-46fb-b2ec-38587957568b" x="185" y="446" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["M4 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6f483b4a-1307-4115-9a9e-d274e34a0b1e" x="376" y="445" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["M6 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="886d540a-ab11-4681-a0d4-9d6fbdef0c4e" x="0" y="0" width="188" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_DOC_CODE1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="90cd0cd9-273e-4085-80a0-8f27d2f4a73c" x="188" y="0" width="188" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_DOC_CODE2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d79d7b77-c41e-42c3-b317-4f6255dec590" x="376" y="0" width="188" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_DOC_CODE3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="79f58493-58ef-4eb5-be27-83697276a079" x="564" y="0" width="188" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_DOC_CODE4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c91bea1b-12ad-472b-a2b0-b3f4fd738444" x="79" y="391" width="109" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_DOC_CODE1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f7d5a337-ab08-493d-9b0e-572db34b9882" x="216" y="391" width="144" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_DOC_CODE2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="baf5062e-1609-4ec3-a6b1-7a85bc84ba03" x="411" y="391" width="114" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_DOC_CODE3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="13061052-8dcb-40b2-b297-8d4f21ed2c97" x="564" y="391" width="115" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_DOC_CODE4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dcaf168b-f84e-43f4-bd38-31fd1c13aec6" x="79" y="429" width="100" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_PACK_UNIT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8f4a97c1-f42d-4d62-9adc-5a0286b5afdc" x="79" y="444" width="102" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_NO_OF_PACK}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="04148bd1-e59c-48d7-aa36-901b79ef73d1" x="216" y="429" width="156" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_INV_VAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="100bab2d-4ee5-4e3d-a13d-31b1c6f2ba6a" x="216" y="446" width="155" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CURR_CODE_FEMUTU}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="eb9d253f-7bb4-4a31-9ecf-a6294afb89d9" x="409" y="429" width="116" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_EX_RATE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy-MM-dd">
+				<reportElement uuid="af4a65b6-c99d-4f58-9957-be3e81ca5059" x="408" y="445" width="116" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_TRANS_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="693f7258-db4f-4038-abbc-cc133418c819" x="529" y="445" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["M16 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="795a9c95-2748-4cd7-8362-a3977201b469" x="529" y="430" width="33" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["M7 :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="701631ec-a188-47cc-a7a3-12fc122e4bf1" x="565" y="430" width="113" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_NT_WGT_K13}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="89fda3e3-159f-43b8-b629-0e977638d83a" x="565" y="446" width="113" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FEMUTU_ADD_FLD_M16}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="14" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

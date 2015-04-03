@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="354.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.foursoft.gpa.clientfx.controller.ArticleAddEditController">
+   <children>
+      <Label layoutX="20.0" layoutY="20.0" text="Article" />
+      <Label layoutX="300.0" layoutY="20.0" prefHeight="17.0" prefWidth="79.0" text="Customer" />
+      <ComboBox fx:id="accountIdCombo" layoutX="396.0" layoutY="20.0" prefHeight="25.0" prefWidth="158.0" />
+      <TextField fx:id="articleCodeText" layoutX="115.0" layoutY="20.0" prefHeight="25.0" prefWidth="164.0" />
+      <Label layoutX="20.0" layoutY="140.0" text="Description" />
+      <TextField fx:id="descriptionText" layoutX="115.0" layoutY="140.0" prefHeight="25.0" prefWidth="439.0" />
+      <Label layoutX="300.0" layoutY="80.0" text="Colli code" />
+      <Label layoutX="20.0" layoutY="80.0" prefHeight="17.0" prefWidth="79.0" text="Start date" />
+      <Label layoutX="20.0" layoutY="200.0" text="Tariff code" />
+      <Button layoutX="486.0" layoutY="200.0" mnemonicParsing="false" onAction="#addTariffButtonPressed" text="Add Tariff" />
+      <Button fx:id="cancelButton" cancelButton="true" layoutX="27.0" layoutY="282.0" mnemonicParsing="false" onAction="#cancelButtonPressed" text="Cancel" />
+      <Button fx:id="saveButton" defaultButton="true" layoutX="95.0" layoutY="282.0" mnemonicParsing="false" onAction="#saveButtonPressed" text="Save" />
+      <DatePicker fx:id="startDatePicker" layoutX="115.0" layoutY="80.0" prefHeight="25.0" prefWidth="164.0" />
+      <ComboBox fx:id="tariffCodeCombo" editable="true" layoutX="115.0" layoutY="200.0" prefHeight="25.0" prefWidth="346.0" />
+      <Label fx:id="messageLabel" layoutX="29.0" layoutY="321.0" prefHeight="17.0" prefWidth="522.0" text="[place holder message]" />
+      <ComboBox fx:id="colliCodeCombo" layoutX="396.0" layoutY="80.0" prefHeight="25.0" prefWidth="158.0" />
+   </children>
+</Pane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.foursoft.gpa.clientfx.controller.TariffListController">
+   <top>
+      <HBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="searchTariff" prefHeight="25.0" prefWidth="389.0" />
+            <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="6.0" />
+            <Button mnemonicParsing="false" onAction="#addTariffPressed" text="Add Tariff">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <center>
+      <TableView fx:id="grid" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="tariffCodeColumn" maxWidth="225.0" minWidth="215.0" prefWidth="222.0" text="Tariff Code" />
+            <TableColumn fx:id="validFromColumn" maxWidth="106.0" minWidth="96.0" prefWidth="99.0" text="Ingangsdatum" />
+            <TableColumn fx:id="dutyRateColumn" maxWidth="81.0" minWidth="70.0" prefWidth="76.0" text="Duty rate" />
+            <TableColumn fx:id="vatColumn" maxWidth="58.0" minWidth="44.0" prefWidth="48.0" text="BTW" />
+            <TableColumn id="articleNumberId" fx:id="articleNumberColumn" maxWidth="258.0" minWidth="242.0" prefWidth="245.0" text="Bescheidcodes">
+               <columns>
+                  <TableColumn fx:id="docCode1Column" maxWidth="-1.0" minWidth="50.0" prefWidth="-1.0" text="1" />
+                  <TableColumn fx:id="docCode2Column" maxWidth="-1.0" minWidth="50.0" prefWidth="-1.0" text="2" />
+                  <TableColumn fx:id="docCode3Column" maxWidth="-1.0" minWidth="50.0" prefWidth="-1.0" text="3" />
+                  <TableColumn fx:id="docCode4Column" maxWidth="-1.0" minWidth="50.0" prefWidth="-1.0" text="4" />
+                  <TableColumn fx:id="docCode5Column" maxWidth="-1.0" minWidth="50.0" prefWidth="-1.0" text="5" />
+               </columns></TableColumn>
+            <TableColumn fx:id="admColliColumn" maxWidth="89.0" minWidth="76.0" prefWidth="84.0" text="Eenheid" />
+            <TableColumn fx:id="tariffDescriptionColumn" maxWidth="196.0" minWidth="191.0" prefWidth="196.0" text="Omschrijving" />            
+        </columns>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </TableView>
+   </center>
+</BorderPane>

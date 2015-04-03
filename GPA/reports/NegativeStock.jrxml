@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NegativeStock" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="12942891-d77a-4941-8e13-db2b6965994e">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="article" class="java.lang.String"/>
+	<field name="class" class="java.lang.Class"/>
+	<field name="client" class="java.lang.String"/>
+	<field name="currency" class="java.lang.String"/>
+	<field name="dateK13" class="java.lang.String"/>
+	<field name="description" class="java.lang.String"/>
+	<field name="direction" class="java.lang.String"/>
+	<field name="feedingSystem" class="java.lang.String"/>
+	<field name="job" class="java.lang.String"/>
+	<field name="period" class="java.lang.String"/>
+	<field name="quantity" class="java.lang.Integer"/>
+	<field name="tariff" class="java.lang.String"/>
+	<field name="type" class="java.lang.String"/>
+	<field name="unit" class="java.lang.String"/>
+	<field name="value" class="java.lang.Double"/>
+	<variable name="group_id" class="java.lang.String" resetType="None">
+		<variableExpression><![CDATA[$F{period}+$F{feedingSystem}+$F{client}+$F{article}+$F{currency}]]></variableExpression>
+	</variable>
+	<variable name="total_quantity" class="java.lang.Integer" resetType="Group" resetGroup="group" calculation="Sum">
+		<variableExpression><![CDATA[$F{quantity}]]></variableExpression>
+	</variable>
+	<group name="group">
+		<groupExpression><![CDATA[$V{group_id}]]></groupExpression>
+		<groupFooter>
+			<band height="24">
+				<staticText>
+					<reportElement uuid="3c984361-faa6-4666-b4ce-4f3d59b9443e" x="432" y="0" width="25" height="15"/>
+					<textElement/>
+					<text><![CDATA[EV]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="f513c850-1222-4a71-a60a-7ed2f7f1acae" x="457" y="0" width="44" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$V{total_quantity}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8254ca25-474d-4c94-bbee-1a8e4e6ef7ab" x="0" y="0" width="555" height="25"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Negative stock per article]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="27">
+			<rectangle>
+				<reportElement uuid="56b210c3-e0a3-4dd6-a64d-4494f84e1765" x="1" y="0" width="555" height="16" forecolor="#FFFFFF" backcolor="#F0F0F0"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="d2703bba-65d3-4873-a86d-9b16ea7c2a3d" x="0" y="0" width="29" height="15"/>
+				<textElement/>
+				<text><![CDATA[Client]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c76cc6ae-8f54-4ca1-99d3-03a38571c822" x="29" y="0" width="46" height="15"/>
+				<textElement/>
+				<text><![CDATA[Currency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a797ad38-ae32-4c45-b275-d3d6d2e9288d" x="313" y="0" width="119" height="15"/>
+				<textElement/>
+				<text><![CDATA[Article number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2e4a79df-e811-411b-9dde-1acd2f101999" x="75" y="0" width="62" height="15"/>
+				<textElement/>
+				<text><![CDATA[K13 Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5090ab96-5b73-432e-8eb9-794ae02facc5" x="137" y="0" width="66" height="15"/>
+				<textElement/>
+				<text><![CDATA[Job number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d468cb70-d8c5-4d09-b1c7-7e8835a294e7" x="203" y="0" width="111" height="15"/>
+				<textElement/>
+				<text><![CDATA[Tariff code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="96f81151-4dbe-46e7-a3ee-118bf2b8f8f0" x="432" y="0" width="25" height="15"/>
+				<textElement/>
+				<text><![CDATA[Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8caa2445-c40b-4cc5-b62a-3fdc1c4a4377" x="456" y="0" width="45" height="15"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d3711cfa-f1e1-413b-9bdb-c210adb49e9f" x="500" y="0" width="55" height="15"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement uuid="2ba06f64-5b0c-47d5-90f9-3745fdde8340" isPrintRepeatedValues="false" x="0" y="0" width="29" height="15" printWhenGroupChanges="group"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{client}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c815c498-9efa-4539-b4d5-83ec46bae1bb" isPrintRepeatedValues="false" x="29" y="0" width="46" height="15" printWhenGroupChanges="group"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{currency}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="73dca183-1d90-4fe9-b519-6e98072cb75e" x="137" y="0" width="66" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{job}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c3b614d4-1f27-47b1-aad2-9033a23f17a4" isPrintRepeatedValues="false" x="202" y="0" width="110" height="15" printWhenGroupChanges="group"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tariff}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3ee74e7d-a3f2-4df4-a068-2a7ed369353c" isPrintRepeatedValues="false" x="311" y="0" width="121" height="15" printWhenGroupChanges="group"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{article}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fd0069e0-2ebb-424d-aeac-39809664d223" x="432" y="0" width="25" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[($F{type}.equals("AA"))?"BV":$F{type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ce48c12b-0dbb-4ebe-ace3-deb67dd5e515" x="456" y="0" width="45" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ddfef94a-558f-4bd2-ab5c-4507b57beb3b" x="500" y="0" width="55" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{value}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

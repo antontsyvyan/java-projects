@@ -1,0 +1,1022 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TotalsImp" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7677fcec-470a-47b5-b7e0-baa1ee75b454">
+	<property name="ireport.zoom" value="1.7715610000000115"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="926"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<parameter name="feed_system" class="java.lang.String"/>
+	<parameter name="period" class="java.lang.String"/>
+	<parameter name="where" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["WHERE FEED_SYS_PRMCHK='"+$P{feed_system}+"' AND PRMCHK_PERIOD='"+$P{period}+"'"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="account_id" class="java.lang.String"/>
+	<parameter name="db" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="prefix" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{db}== null || $P{db}.isEmpty()==true || $P{db}.equals("") ? "gpa.": $P{db}+"."]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from $P!{prefix}prmchk
+ $P!{where}]]>
+	</queryString>
+	<field name="PRMCHK_CUST_VAL" class="java.math.BigDecimal"/>
+	<field name="PRMCHK_EXCISE_CODE1" class="java.lang.String"/>
+	<field name="PRMCHK_VAT_AMT" class="java.math.BigDecimal"/>
+	<field name="PRMCHK_IMP_DUTIES" class="java.math.BigDecimal"/>
+	<field name="PRMCHK_REC_NO" class="java.lang.Integer"/>
+	<field name="PRMCHK_EXCISE_CODE3" class="java.lang.String"/>
+	<field name="PRMCHK_TRANS_CODE_NO" class="java.lang.Integer"/>
+	<field name="FEED_SYS_PRMCHK" class="java.lang.String"/>
+	<field name="PRMCHK_EXCISE_CODE2" class="java.lang.String"/>
+	<field name="PRMCHK_IMP_DUTIES_E35" class="java.math.BigDecimal"/>
+	<field name="PRMCHK_EXCISE_AMT2" class="java.math.BigDecimal"/>
+	<field name="PRMCHK_CRDATE" class="java.sql.Date"/>
+	<field name="PRMCHK_FINAL_AMT_CHRGS" class="java.math.BigDecimal"/>
+	<field name="PRMCHK_EXCISE_AMT1" class="java.math.BigDecimal"/>
+	<field name="PRMCHK_AMT_RELIEF" class="java.math.BigDecimal"/>
+	<field name="PRMCHK_EXCISE_AMT4" class="java.math.BigDecimal"/>
+	<field name="PRMCHK_AGR_LEVIES" class="java.math.BigDecimal"/>
+	<field name="PRMCHK_EXCISE_CODE4" class="java.lang.String"/>
+	<field name="PRMCHK_PRELIM_AMT_CHRGS" class="java.math.BigDecimal"/>
+	<field name="PRMCHK_DISK_CREATED" class="java.lang.String"/>
+	<field name="PRMCHK_PERIOD" class="java.lang.Integer"/>
+	<field name="PRMCHK_SPEC_CUST_DUTIES" class="java.math.BigDecimal"/>
+	<field name="PRMCHK_DECL_REC_NO" class="java.lang.Integer"/>
+	<field name="PRMCHK_EXCISE_AMT3" class="java.math.BigDecimal"/>
+	<variable name="period" class="java.lang.String">
+		<variableExpression><![CDATA[new SimpleDateFormat("yyyy MMMMMMMMMMMMMM").format(new SimpleDateFormat("yyyyMM").parse($F{PRMCHK_PERIOD}.toString()))]]></variableExpression>
+	</variable>
+	<variable name="dateFrom" class="java.lang.String">
+		<variableExpression><![CDATA[new SimpleDateFormat("01-MM-yyyy").format(new SimpleDateFormat("yyyyMM").parse($F{PRMCHK_PERIOD}.toString()))]]></variableExpression>
+	</variable>
+	<variable name="dateTo" class="java.lang.String">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="myCalendar" class="java.util.Calendar">
+		<variableExpression><![CDATA[$V{myCalendar}.getInstance()]]></variableExpression>
+	</variable>
+	<variable name="name" class="java.lang.String"/>
+	<variable name="accountName" class="java.lang.String"/>
+	<variable name="currentDate" class="java.lang.String">
+		<variableExpression><![CDATA[new SimpleDateFormat("dd-MM-yyyy").format(new Date())]]></variableExpression>
+	</variable>
+	<variable name="accountCity" class="java.lang.String"/>
+	<variable name="paging" class="java.lang.String" resetType="None">
+		<variableExpression><![CDATA[$V{CURRENT_PAGE_NUMBER}.toString()]]></variableExpression>
+	</variable>
+	<variable name="CURRENT_PAGE_NUMBER" class="java.lang.Integer" resetType="None">
+		<variableExpression><![CDATA[$V{CURRENT_PAGE_NUMBER}==null ? $V{PAGE_NUMBER} : ($V{PAGE_NUMBER}+1)]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="50"/>
+	</pageHeader>
+	<detail>
+		<band height="95">
+			<image>
+				<reportElement uuid="3ba2a18e-2a82-46b4-a2e3-bbe3cf24a60d" x="17" y="2" width="500" height="87"/>
+				<imageExpression><![CDATA["images\\logo_douane.png"]]></imageExpression>
+			</image>
+		</band>
+		<band height="144">
+			<rectangle>
+				<reportElement uuid="700dcea1-6d5a-4c31-a020-880b6fcacefb" x="32" y="0" width="494" height="13" backcolor="#000000"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="65ef231a-64fe-49dc-90aa-e69ebe9dc0f1" x="34" y="0" width="455" height="13" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Vergunninghouder"]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="82f840b4-38da-45cc-a89b-846cec669a0b" stretchType="RelativeToBandHeight" x="0" y="13" width="555" height="123"/>
+				<subreportParameter name="account_id">
+					<subreportParameterExpression><![CDATA[$P{account_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="prefix">
+					<subreportParameterExpression><![CDATA[$P{prefix}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<returnValue subreportVariable="accountName" toVariable="accountName"/>
+				<returnValue subreportVariable="accountCity" toVariable="accountCity"/>
+				<subreportExpression><![CDATA["TotalsDetails_SubAccount.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="153">
+			<rectangle>
+				<reportElement uuid="ed5969d9-d135-4df4-a142-0b4b7fb85440" x="32" y="11" width="494" height="13" backcolor="#000000"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="3e37c367-35e4-4975-bfd4-bb4773af7d11" x="36" y="11" width="455" height="13" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Periode waarover aangifte wordt gedaan"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8be49d44-2bf2-4897-9740-b896f6395526" x="33" y="34" width="181" height="38"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Periode-aanduiding in de \r\n"+
+"geautomatiseerde opgave \r\n"+
+"(veld A.1)"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="50a45225-0d37-4782-88bf-3f910be7c404" x="217" y="42" width="308" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="90549ad1-3391-4616-8075-c770fd921e15" x="225" y="42" width="296" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{period}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6bc8007f-6565-4a53-8d83-cf22498678c8" x="32" y="78" width="182" height="13"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Begindatum van deze periode"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="aac7effe-bba0-4792-a78e-5dd68410493b" x="217" y="75" width="308" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="876419cd-d569-44a1-b974-51ec33d26976" x="217" y="108" width="308" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="034f93bd-9096-4862-9109-c47fb9358af6" x="32" y="111" width="182" height="13"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Einddatum"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1408efc9-277c-4a12-9322-c7a32530c9b3" x="225" y="75" width="296" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{dateFrom}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="106">
+			<rectangle>
+				<reportElement uuid="1bb9255f-9094-4ea9-bcff-108cc3d9c788" x="33" y="4" width="494" height="13" backcolor="#000000"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="0cba60db-ea59-411c-a86d-4fd0116a773d" x="35" y="4" width="455" height="13" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Vergunningen"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="31366998-c528-49e1-8d7e-2d1d3e03e4f9" x="54" y="32" width="306" height="13"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Vergunningnummer domiciliëringsprocedure vrije verkeer"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="3892c623-50f3-44ef-a0dd-f36bc6b4699a" x="33" y="32" width="13" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="690b458d-7343-4e35-8b80-a9c7f4463678" x="33" y="59" width="13" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="60721415-4725-469c-98e2-8155b08a4358" x="54" y="59" width="306" height="13"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Vergunningnummer vereenvoudigde aangifte vrije verkeer"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="fdf58243-883e-4f1b-9e9e-d6faf9610071" x="35" y="34" width="8" height="9" backcolor="#000000">
+					<printWhenExpression><![CDATA[$F{FEED_SYS_PRMCHK}.equals("DOMPROC")]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="0e176edc-75ad-42af-9052-7874965decaf" x="35" y="61" width="8" height="9" backcolor="#000000">
+					<printWhenExpression><![CDATA[!$F{FEED_SYS_PRMCHK}.equals("DOMPROC")]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="40d615b6-e7ef-4350-8a66-e205ea62fcf1" x="363" y="28" width="162" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="9f0d5afa-d98d-4d45-a04c-75639fa6c917" x="363" y="55" width="162" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+		<band height="261">
+			<rectangle>
+				<reportElement uuid="bf153fde-ee66-45d9-91ab-cf12549c1088" x="33" y="4" width="493" height="13" isPrintInFirstWholeBand="true" backcolor="#000000"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="9455158e-aa5c-4261-aaae-454bc814bf70" x="37" y="4" width="455" height="13" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Speciale vermeldingen ten aanzien van de periodieke aangiftegegevens"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="d74043fa-27c6-4ed8-8041-feed4bc07a39" x="33" y="29" width="13" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="7f2a11cf-690a-48f3-b6df-83ac1c73026b" x="54" y="27" width="471" height="47"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hierbij verzoekt ondergetekende tot aanvaarding van de in veld E.9 met een * gemarkeerde \r\n"+
+"informatieregel(s), waarvoor de voor de toepassing van een lager recht bij invoer of \r\n"+
+"nulrecht noodzakelijke bescheiden later zullen worden overlegd"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="8e3b70f2-21e4-45ad-b3b2-c59aff24e4e1" x="33" y="85" width="13" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="987c3410-8bf3-4e5e-98df-2724ad9905e9" x="54" y="84" width="473" height="39"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hierbij verzoekt ondergetekende tot aanvaarding van de in veld E.10 met een * gemarkeerde\r\n"+
+"informatieregel(s),waarvoor de ontbrekende gegevens later zullen worden medegedeeld"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="181de566-bc6d-46d4-8ab3-0806174ff7ff" x="33" y="133" width="13" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="d3cff33d-500c-41dc-a0fb-a6600a92151d" x="54" y="132" width="321" height="45"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["De berekeningen van de vermelde heffingen die zijn\r\n"+
+"overgenomen uit een Inlichtingenblad of anderszins op\r\n"+
+"vergelijkbare wijze zijn berekend zijn bijgevoegd als bijlage(n)"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="e6a8ca33-cddc-45f0-976b-310ee2ac50e9" x="382" y="147" width="143" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+		<band height="796" splitType="Immediate">
+			<rectangle>
+				<reportElement uuid="a1fcb446-10d9-454a-9611-db2aef19e6a9" x="218" y="376" width="118" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="949f7bf4-40da-48b8-9b57-3d415ea3bacb" x="218" y="556" width="312" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="43cbe17f-cab8-44ef-b77e-e07fe93c0682" x="218" y="520" width="312" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="6ce6f682-2e25-4361-b728-04c02bc85e92" x="320" y="249" width="38" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="e2038d3f-daaf-44e7-a9e3-44618ead0bbf" x="320" y="190" width="38" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="43a7bbf0-e2b3-4c0c-b014-d0ab005fa614" x="33" y="5" width="494" height="13" backcolor="#000000"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="100c4ace-6e82-40d5-ae88-a48fb1a79c55" x="35" y="5" width="455" height="13" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Totalen belasting gespecificeerd per middelcode volgens geautomatiseerde opgave"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9e8d5475-ae5c-402b-8fb0-ecf2393848bb" x="32" y="32" width="130" height="13"/>
+				<textElement>
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Type van belasting"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8ec0cbe5-f83e-48b7-8f24-5a404f5a1ed9" x="32" y="58" width="91" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Douanerechten"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a4ecfc3b-a6bb-4c2d-b833-cade63397e82" x="149" y="58" width="104" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bruto"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="68ae4cff-6842-4cac-ba76-211881e5f38c" x="281" y="32" width="82" height="13"/>
+				<textElement>
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Middel code"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b374e830-c4d8-456e-8875-823e545d5fe8" x="372" y="32" width="156" height="13"/>
+				<textElement>
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bedrag in Euro’s"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="5f08e148-9eb5-488b-b619-42130a1489ab" x="372" y="51" width="154" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="0ed1315c-3394-4f9f-84b6-861bf357a173" x="394" y="54" width="127" height="13"/>
+				<textElement textAlignment="Right">
+					<font fontName="Verdana" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{PRMCHK_IMP_DUTIES_E35}.doubleValue()>0)?$F{PRMCHK_IMP_DUTIES_E35}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c8621f88-f43e-4efb-aca5-d661df732d27" x="375" y="53" width="13" height="15"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["€"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="c3e7ccc4-3964-444f-ad1b-86f98c6cf405" x="372" y="78" width="154" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="c3591e78-ffa1-440e-96d8-6f3514456fd2" x="372" y="106" width="154" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="82708ef4-1d36-4ec1-b419-de62fbadeb0a" x="375" y="80" width="13" height="15"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["€"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ec91aca5-6c02-4504-aa95-28b7d6cf5f72" x="375" y="108" width="13" height="15"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["€"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="341b9fc2-54a0-4580-9f67-9f0907145d59" x="372" y="133" width="154" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="6af82d79-99f9-4781-a6cc-e066007c8bcb" x="372" y="161" width="154" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="c2746bc3-be77-4172-b941-b5f24a10a137" x="375" y="135" width="13" height="15"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["€"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="00042143-3e06-441e-939a-b95f32de67ce" mode="Opaque" x="375" y="164" width="13" height="15"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["€"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="977a717d-1190-43f5-9727-a034581fa8c2" x="320" y="106" width="38" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="1e20e64b-31d6-4162-99c5-1e23f6a19e76" x="320" y="107" width="39" height="16"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["A 0 0"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="539f263b-4651-43c7-823e-6456f8f7addd" x="320" y="133" width="38" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="e456f541-400a-4b53-9b77-9f408822611b" x="320" y="134" width="39" height="16"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["A 2 0"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="b96752d4-9b38-4d39-aac9-ba6d4be157bf" x="320" y="161" width="38" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="2a50e981-dc88-48a1-a64b-88d5027c879f" x="321" y="162" width="39" height="16"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["B 0 0"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="21d1b296-3b63-422d-a3db-2212009818a5" x="149" y="83" width="104" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bedrag vrijstelling"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f3446b57-5f9e-4a9f-b275-c275d8039733" x="149" y="111" width="104" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Netto"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dc20b80d-c644-40aa-9c11-bcc23bec662d" x="32" y="166" width="117" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Omzetbelasting"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="78898c62-9cf1-4ba3-a2d0-6b11fc469601" x="394" y="81" width="127" height="13"/>
+				<textElement textAlignment="Right">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{PRMCHK_AMT_RELIEF}.doubleValue()>0)?$F{PRMCHK_AMT_RELIEF}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1ca6406e-1f90-4d53-84cf-a763ea746669" x="394" y="109" width="127" height="13"/>
+				<textElement textAlignment="Right">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{PRMCHK_IMP_DUTIES}.doubleValue()>0)?$F{PRMCHK_IMP_DUTIES}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a32cff61-062d-428b-bdcb-3e3cc55f047c" x="394" y="164" width="127" height="13"/>
+				<textElement textAlignment="Right">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{PRMCHK_VAT_AMT}.doubleValue()>0)?$F{PRMCHK_VAT_AMT}:""]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="cd01a684-deb4-42e4-8ad6-344a134387d2" x="33" y="289" width="493" height="13" backcolor="#000000"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="696b7511-33df-4776-820e-c2808492c9ca" x="38" y="289" width="479" height="13" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Specificatie van het medium en de geautomatiseerde opgave"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4f89a631-1d74-48e6-bda0-5df3f473c296" x="36" y="325" width="91" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Soort medium"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="a3a850de-0d04-46a0-9882-8f64907c1008" x="139" y="324" width="13" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="54181074-6a4d-4e26-bd80-4eef77cfe759" x="155" y="324" width="49" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Diskette"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="1e94172a-40d0-4795-b15f-1742f474ff7a" x="218" y="324" width="12" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="140f1cc9-82ef-412c-9d1f-3dc940c663d0" x="233" y="324" width="52" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CD ROM"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e1a321b4-34a1-4612-92d5-48396b34f933" x="296" y="319" width="182" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ingeleverd aantal van het medium"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="76700fe9-62a2-4d15-a549-3e3d7b86ac8c" x="37" y="350" width="91" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Recordlayout"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="f648327d-2e17-456e-8fad-e9c8f15e2888" x="139" y="350" width="13" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="1b31fe09-941c-40cf-a055-387757fc7dc9" x="155" y="350" width="60" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Methode 1"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="1ebe3cbc-0f23-41e0-9d11-66515428c6ef" x="218" y="350" width="12" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="56a48130-db03-4954-91d5-a310cd29851d" x="233" y="350" width="65" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Methode 2"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="966b58e6-c803-4d18-8728-bb15d3c879fd" x="297" y="350" width="13" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="3ae52197-de96-4f5d-b613-908d0ac9425d" x="313" y="350" width="83" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Methode 3"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4a825ba1-d486-4bbc-9bf6-55ecf9bb46db" x="37" y="376" width="181" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Aantal records"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b3cce21c-111b-47bb-a23e-3d9a645f1a63" x="37" y="408" width="181" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Aantal informatieregels"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3f674fb0-c3bc-49bb-92b9-d579a723ce79" x="217" y="376" width="115" height="19"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PRMCHK_REC_NO}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="c6b9b7ef-5c4d-4710-b9a1-9b0667d70441" x="33" y="468" width="497" height="13" backcolor="#000000"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="5d0822e1-eb57-4583-94ef-5fb8272a86ff" x="40" y="468" width="479" height="13" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Controletellingen"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="91c6ad33-f5dc-4eaf-b88c-e72232b3f355" x="36" y="494" width="494" height="13"/>
+				<textElement>
+					<font size="10" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Als controlegetallen moeten de totalen van de waarden van de navolgende velden worden vermeld"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e54616a1-5235-4b4d-baa5-018200f7eaf7" x="36" y="520" width="182" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["A.2 (codesoort)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="347248e9-fa36-4ea8-a292-7b58785f5b39" x="36" y="556" width="182" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["E.31 (douanewaarde)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9cfa9e32-a53a-465a-a79f-b37ca10e2cf7" x="226" y="520" width="299" height="19"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PRMCHK_TRANS_CODE_NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="738b499c-fef0-4747-8cb4-a8d7df09d66b" x="226" y="556" width="299" height="19"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PRMCHK_CUST_VAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2e68b77b-7c2a-4f06-99ad-8286b2caf15e" mode="Opaque" x="375" y="193" width="13" height="15"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["€"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="f3256b4d-0d17-4aff-88b9-b36f8c18de17" x="372" y="190" width="154" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="218dd55a-b8c1-4cf6-921e-02f3342e2fc6" x="321" y="191" width="39" height="16"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["A 3 0"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7989cb6c-c14f-4173-b1b4-e6c4c59abd50" mode="Opaque" x="375" y="193" width="13" height="15"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["€"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3badd4b8-416a-4633-9282-e686a252a7db" x="396" y="192" width="125" height="16"/>
+				<textElement textAlignment="Right">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{PRMCHK_FINAL_AMT_CHRGS}.doubleValue()>0)?$F{PRMCHK_FINAL_AMT_CHRGS}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7d2f8943-24f7-4f8d-ad2d-dbeb7cdf6603" x="32" y="194" width="278" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Definitieve antidumpingrechten"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="224da6b0-b97d-4bb3-96fd-2e425bf1f5ea" mode="Opaque" x="375" y="222" width="13" height="15"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["€"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="37ad31b6-55c2-4233-9e6b-c79e8d16962b" x="32" y="223" width="278" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Voorlopige antidumpingrechten"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="17141b9d-a5d7-407a-9c38-de164005c2bd" x="320" y="219" width="38" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="d43790e7-76eb-46b7-bb1d-f4ac8f8ca295" x="372" y="219" width="154" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="14dc9db9-08cd-46de-9d55-f03f72d5ebad" x="321" y="220" width="39" height="16"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["A 3 5"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0cec5b02-0dd9-4c3f-8858-8a46a0f57606" mode="Opaque" x="375" y="222" width="13" height="15"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["€"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="920e4978-954b-409c-a842-9536d9331a01" x="396" y="221" width="123" height="16"/>
+				<textElement textAlignment="Right">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{PRMCHK_PRELIM_AMT_CHRGS}.doubleValue()>0)?$F{PRMCHK_PRELIM_AMT_CHRGS}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="33e3c768-a60a-41bd-b621-e3de9264198a" x="32" y="253" width="278" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Belasting bij invoer inzake landbouwbeleid"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b6f1374a-547a-4088-a32c-3575250c22b6" mode="Opaque" x="375" y="252" width="13" height="15"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["€"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="4677520f-b142-4922-8148-e47577f5146b" x="372" y="249" width="154" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="60f6ea7a-b800-429c-a43c-272f67d58f7c" x="321" y="250" width="39" height="16"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["A 1 0"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4db313f3-fc08-421b-a1c8-c7d41ce1ae03" mode="Opaque" x="375" y="252" width="13" height="15"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["€"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b6294b6d-5646-45e7-aa75-324df558313c" x="396" y="251" width="121" height="16"/>
+				<textElement textAlignment="Right">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{PRMCHK_AGR_LEVIES}.doubleValue()>0)?$F{PRMCHK_AGR_LEVIES}:""]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="c9c5d134-5063-4fe1-88ae-d4803ed0f730" x="479" y="319" width="47" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="4430698c-7797-40ff-8b63-3b927d1c2fbf" x="218" y="408" width="118" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="1d4085ec-8a7c-4d39-aa70-a77d48e9fb0c" x="218" y="408" width="115" height="19"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PRMCHK_DECL_REC_NO}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="348">
+			<rectangle>
+				<reportElement uuid="8dd774b2-105f-420d-9497-1829fbb94d68" x="33" y="9" width="497" height="13" backcolor="#000000"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="3f39a97b-33c5-4c5d-94dd-c52d39b12a66" x="40" y="9" width="479" height="13" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Juridische verklaring"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="871a2f3f-affb-46f1-8b54-67275c4397e2" x="37" y="34" width="498" height="13"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ondergetekende dient hierbij aangifte(n) namens"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0d624805-2e74-4e21-9d42-889c0f7eff3e" x="37" y="58" width="180" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Naam vergunninghouder"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ccec5179-8314-45ad-ac72-ef2d3f8d772d" x="36" y="88" width="182" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Over het tijdvak"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="10808fb5-105f-4d80-af78-d162e454bade" x="36" y="116" width="182" height="45"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Onder overlegging van de\r\n"+
+"geautomatiseerde opgave bijlagen\r\n"+
+"en bijvoeging van"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="244a7f0b-19df-4ca7-9a3a-22c44b678dc5" x="37" y="171" width="181" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Plaats"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="002b2e5d-9f21-461a-a850-a19352c39fac" x="37" y="200" width="181" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Datum"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9da9bae3-463f-42d5-91a7-702a26deaa13" x="37" y="230" width="181" height="29"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Naam (gemachtigde)\r\n"+
+"in blokletters"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d2b49949-0a76-4da3-8270-0acdc78ca7e1" x="38" y="269" width="180" height="13"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Handtekening (gemachtigde)"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="1a35353c-6002-41c3-9f61-5946515038d4" x="218" y="58" width="312" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="5997b164-fb16-4d23-8995-35e31a71d8f9" x="218" y="88" width="312" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="63f2128d-cb59-4aa2-bcfa-77c4ac58e6b5" x="218" y="131" width="63" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="2e981761-54e0-4541-b575-7a383351260e" x="218" y="171" width="312" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="3618f4fc-d547-4279-9fad-f71a71cf5417" x="218" y="201" width="312" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="9a2766d7-f3eb-4591-a06e-de798c10cddc" x="218" y="234" width="312" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="8241d6ad-205d-4f10-bd3e-32cd96746ad5" x="292" y="131" width="238" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["bijlagen"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="bf0ef279-c836-41fc-add9-9936cf41a3f8" x="218" y="268" width="170" height="80"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="b0b222cc-687f-417b-9acb-614f79c880cf" x="225" y="58" width="303" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{accountName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="32ccea11-04b6-49d3-ae97-837959399a7a" x="225" y="88" width="301" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{period}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="31d8eefb-4c3f-4f24-9edd-92b68ea0d66a" x="225" y="201" width="300" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{currentDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c67d3de6-a542-4b5b-a8ac-130dfa3ef958" x="226" y="171" width="299" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{accountCity}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

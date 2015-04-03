@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-sources>
+	<data-source id="D489AFFA-D243-570B-CEA4-A1DBFCD7642F-1402484854560--1902321824" provider="generic" driver="D489AFFA-D243-570B-CEA4-A1DBFCD7642F" name="NLDORSMEDEV03 GPA" create-date="1402484937526" save-password="true" show-system-objects="true" read-only="false">
+		<connection host="nldorsmedev03" port="11016" server="" database="" url="jdbc:datadirect:openedge://nldorsmedev03:11016" user="sysprogress" password="AB0VMFNMQwQAARVe9g==" type="dev">
+			<property name="databaseName" value="gpa"/>
+			<network-handler type="TUNNEL" id="ssh_tunnel" enabled="false" user="" save-password="false">
+				<property name="port" value="22"/>
+				<property name="keyPath" value=""/>
+				<property name="host" value=""/>
+				<property name="authType" value="PASSWORD"/>
+			</network-handler>
+			<network-handler type="PROXY" id="socks_proxy" enabled="false" user="" save-password="false">
+				<property name="socks-host" value=""/>
+				<property name="socks-port" value="1080"/>
+			</network-handler>
+		</connection>
+		<virtual-meta-data>
+			<container name="model">
+				<container name="GPA">
+					<entity name="MAPIN">
+						<constraint name="PRIMARY" type="VIRTUAL KEY">
+							<attribute name="MAPIN_ID"/>
+							<attribute name="MAPIN_SEQ"/>
+						</constraint>
+					</entity>
+					<entity name="FEMUTU">
+						<constraint name="PRIMARY" type="VIRTUAL KEY">
+							<attribute name="FEED_SYS_FEMUTU"/>
+							<attribute name="FEMUTU_IN_OUT_BOUND"/>
+							<attribute name="FEMUTU_JOB_NO"/>
+							<attribute name="FEMUTU_LINE_NO"/>
+							<attribute name="FEMUTU_TRANS_CODE"/>
+							<attribute name="FEMUTU_BON_WRH_TYPE"/>
+							<attribute name="FEMUTU_STAT_GDS"/>
+							<attribute name="FEMUTU_NAW_NO"/>
+							<attribute name="FEMUTU_DOC_TYPE"/>
+							<attribute name="FEMUTU_ADD_DOC_NO"/>
+							<attribute name="FEMUTU_DT_ISSUE_DOC"/>
+							<attribute name="FEMUTU_TG_IND"/>
+							<attribute name="FEMUTU_PERIOD"/>
+							<attribute name="FEMUTU_MOD"/>
+							<attribute name="FEMUTU_PLACE_ISSUE_DOC"/>
+							<attribute name="FEMUTU_DOC_VAL"/>
+							<attribute name="FEMUTU_ART_NO"/>
+							<attribute name="FEMUTU_ART_DESC"/>
+							<attribute name="FEMUTU_TARIFF_CODE"/>
+							<attribute name="FEMUTU_IMP_CERTIFICATE"/>
+							<attribute name="FEMUTU_INVNO"/>
+							<attribute name="FEMUTU_INV_LN_NO"/>
+							<attribute name="FEMUTU_INV_DATE"/>
+							<attribute name="FEMUTU_KIND_CODE_D11"/>
+							<attribute name="FEMUTU_NO_PCS_D12"/>
+							<attribute name="FEMUTU_NT_WGT"/>
+							<attribute name="FEMUTU_LOC"/>
+							<attribute name="FEMUTU_SPARE_FLD_D15"/>
+							<attribute name="CT_CODE_ORG"/>
+							<attribute name="CT_CODE_PROV"/>
+							<attribute name="FEMUTU_PREF_CODE1"/>
+							<attribute name="FEMUTU_PREF_CODE2"/>
+							<attribute name="FEMUTU_NO_ADD_UNITS"/>
+							<attribute name="FEMUTU_ADD_UNITS"/>
+							<attribute name="FEMUTU_INV_PROF"/>
+							<attribute name="FEMUTU_INV_PROF_LINE"/>
+							<attribute name="FEMUTU_INV_VAL"/>
+							<attribute name="CURR_CODE_FEMUTU"/>
+							<attribute name="FEMUTU_EX_RATE"/>
+							<attribute name="FEMUTU_INV_PROF_DATE"/>
+							<attribute name="FEMUTU_COM_PREF"/>
+							<attribute name="FEMUTU_BOX37"/>
+							<attribute name="FEMUTU_TRANS_TYPE"/>
+							<attribute name="FEMUTU_RELATION"/>
+							<attribute name="FEMUTU_RESTRIC"/>
+							<attribute name="FEMUTU_LIC_FEE"/>
+							<attribute name="FEMUTU_CALC_METHOD"/>
+							<attribute name="FEMUTU_VAL_DET"/>
+							<attribute name="FEMUTU_TARIFF_CONT_REQ"/>
+							<attribute name="MOT_CODE_FEMUTU"/>
+							<attribute name="FEMUTU_CONT"/>
+							<attribute name="NAW_CODE_CM"/>
+							<attribute name="FEMUTU_SPEC_INDI"/>
+							<attribute name="FEMUTU_STAN_PERC_DUTIES"/>
+							<attribute name="FEMUTU_TRANS_CODE_K7"/>
+							<attribute name="FEMUTU_TRANS_NO"/>
+							<attribute name="FEMUTU_TRANS_DATE"/>
+							<attribute name="FEMUTU_NT_WGT_K13"/>
+							<attribute name="FEMUTU_ADD_FLDK15"/>
+							<attribute name="FEMUTU_ADD_FLDK16"/>
+							<attribute name="FEMUTU_ADD_FLDK17"/>
+							<attribute name="FEMUTU_ADD_FLDK18"/>
+							<attribute name="FEMUTU_ADD_FLDK19"/>
+							<attribute name="FEMUTU_ADD_FLDK20"/>
+							<attribute name="FEMUTU_ADD_FLDK21"/>
+							<attribute name="FEMUTU_ADD_FLDK22"/>
+							<attribute name="FEMUTU_ADD_FLDK23"/>
+							<attribute name="FEMUTU_AUTH_NO"/>
+							<attribute name="FEMUTU_IMP_LIC"/>
+							<attribute name="FEMUTU_IMP_LIC_DATE"/>
+							<attribute name="FEMUTU_SCO_IND"/>
+							<attribute name="FEMUTU_PRELIM_IND"/>
+							<attribute name="FEMUTU_CERTIFICATE_NO"/>
+							<attribute name="NAW_CODE_CONS"/>
+							<attribute name="FEMUTU_CONS_NAME"/>
+							<attribute name="FEMUTU_CONS_CITY"/>
+							<attribute name="CONS_VAT_NO"/>
+							<attribute name="FEMUTU_VERIFY_BY_CUST"/>
+							<attribute name="FEMUTU_INCO_TERMS"/>
+							<attribute name="FEMUTU_DELIV_PLACE"/>
+							<attribute name="FEMUTU_FRT_AMT_EUR"/>
+							<attribute name="FEMUTU_INS_AMT_EUR"/>
+							<attribute name="FEMUTU_ADD_DED_EUR"/>
+							<attribute name="FEMUTU_CUST_VAL_EUR"/>
+							<attribute name="FEMUTU_IMP_DUT_PERC"/>
+							<attribute name="FEMUTU_AMT_RELIEF"/>
+							<attribute name="FEMUTU_CUST_DUT_SPEC"/>
+							<attribute name="FEMUTU_CUST_DUTIES"/>
+							<attribute name="FEMUTU_DOC_NO"/>
+							<attribute name="FEMUTU_TYPE_OF_CHRGS"/>
+							<attribute name="FEMUTU_MANU"/>
+							<attribute name="FEMUTU_AMT_OF_CHRGS"/>
+							<attribute name="FEMUTU_AGRI_LEV"/>
+							<attribute name="FEMUTU_VAT_AMT"/>
+							<attribute name="FEMUTU_VAT_CONV_VAL"/>
+							<attribute name="FEMUTU_EXCISE_CODE_G1"/>
+							<attribute name="FEMUTU_VAT_PREF_CODE"/>
+							<attribute name="FEMUTU_EXCISE_AMT_G1"/>
+							<attribute name="FEMUTU_EXCISE_CODE_G3"/>
+							<attribute name="FEMUTU_EXCISE_AMT_G3"/>
+							<attribute name="FEMUTU_EXCISE_CODE_G5"/>
+							<attribute name="FEMUTU_EXCISE_AMT_G5"/>
+							<attribute name="FEMUTU_EXCISE_CODE_G7"/>
+							<attribute name="FEMUTU_EXCISE_AMT_G7"/>
+							<attribute name="FEMUTU_EXT_PERC"/>
+							<attribute name="FEMUTU_ACT_ALCH_STE"/>
+							<attribute name="FEMUTU_ALC_FREE_LIT"/>
+							<attribute name="FEMUTU_LTS_OIL"/>
+							<attribute name="FEMUTU_PER_KG"/>
+							<attribute name="FEMUTU_PURE_ALC_LTS"/>
+							<attribute name="FEMUTU_TRAN_DOC"/>
+							<attribute name="FEMUTU_PACK_UNIT"/>
+							<attribute name="FEMUTU_NO_OF_PACK"/>
+							<attribute name="FEMUTU_INV_SLS"/>
+							<attribute name="FEMUTU_INV_SLS_LINE"/>
+							<attribute name="FEMUTU_INV_SLS_DATE"/>
+							<attribute name="FEMUTU_QUAN1"/>
+							<attribute name="FEMUTU_QUAN2"/>
+							<attribute name="FEMUTU_EXP_LIC_NUM"/>
+							<attribute name="FEMUTU_EXP_LIC_DATE"/>
+							<attribute name="CT_CODE_DEST"/>
+							<attribute name="FEMUTU_BASE_CODE2"/>
+							<attribute name="FEMUTU_DOC_CODE1"/>
+							<attribute name="FEMUTU_DOC_CODE2"/>
+							<attribute name="FEMUTU_DOC_CODE3"/>
+							<attribute name="FEMUTU_DOC_CODE4"/>
+							<attribute name="FEMUTU_BASE_CODE1"/>
+							<attribute name="FEMUTU_MTH_PAY"/>
+							<attribute name="FEMTU_STAT"/>
+							<attribute name="FEMUTU_MEM_STATE"/>
+							<attribute name="FEMUTU_STAT"/>
+							<attribute name="FEMUTU_ADD_FLD_M8"/>
+							<attribute name="FEMUTU_ADD_FLD_M9"/>
+							<attribute name="FEMUTU_ADD_FLD_M10"/>
+							<attribute name="FEMUTU_ADD_FLD_M11"/>
+							<attribute name="FEMUTU_ADD_FLD_M12"/>
+							<attribute name="FEMUTU_ADD_FLD_M13"/>
+							<attribute name="FEMUTU_ADD_FLD_M14"/>
+							<attribute name="FEMUTU_ADD_FLD_M15"/>
+							<attribute name="FEMUTU_ADD_FLD_M16"/>
+							<attribute name="FEMUTU_CONS_ADDR"/>
+							<attribute name="FEMUTU_ADD_DOC_CODE"/>
+						</constraint>
+					</entity>
+					<entity name="EXCTAR">
+						<constraint name="PRIMARY" type="VIRTUAL KEY">
+							<attribute name="EXCTAR_MID_CODE"/>
+							<attribute name="EXCTAR_SORT_ID"/>
+							<attribute name="EXCTAR_START_DATE"/>
+							<attribute name="EXCTAR_UNIT"/>
+							<attribute name="EXCTAR_UNIT_TAR"/>
+							<attribute name="EXCTAR_SPL_UNIT_TAR"/>
+							<attribute name="EXCTAR_MIN_UNIT_TAR"/>
+							<attribute name="EXCTAR_PERC_RETAIL"/>
+						</constraint>
+					</entity>
+					<entity name="EXCSRT">
+						<constraint name="PRIMARY" type="VIRTUAL KEY">
+							<attribute name="EXCSRT_GRP_ID"/>
+							<attribute name="EXCSRT_ID"/>
+						</constraint>
+					</entity>
+					<entity name="GPAREQ">
+						<constraint name="PRIMARY" type="VIRTUAL KEY">
+							<attribute name="GPAREQ_ID"/>
+						</constraint>
+					</entity>
+				</container>
+			</container>
+		</virtual-meta-data>
+	</data-source>
+	<data-source id="db2_iseries-1402493785386-1461681963" provider="generic" driver="db2_iseries" name="AS400A" create-date="1402493827303" update-date="1402493873903" save-password="true" show-system-objects="true" read-only="false">
+		<connection host="AS400A" server="" database="LIMSGENDBT" url="jdbc:as400://AS400A;libraries=LIMSGENDBT;" user="PIDTEAM" password="IyUoAWxiJPc=" type="dev">
+			<network-handler type="TUNNEL" id="ssh_tunnel" enabled="false" user="" save-password="false">
+				<property name="port" value="22"/>
+				<property name="keyPath" value=""/>
+				<property name="host" value=""/>
+				<property name="authType" value="PASSWORD"/>
+			</network-handler>
+			<network-handler type="PROXY" id="socks_proxy" enabled="false" user="" save-password="false">
+				<property name="socks-host" value=""/>
+				<property name="socks-port" value="1080"/>
+			</network-handler>
+		</connection>
+	</data-source>
+</data-sources>

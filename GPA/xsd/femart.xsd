@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (x64) (http://www.altova.com) by Antonio (4S) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="MESSAGE">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="FEMART">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FEMART_CODE" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="26"/>
+										<xs:minLength value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ACCOUNT_ID" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="15"/>
+										<xs:minLength value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="FEMART_DESC" nillable="true" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="30"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="FEMART_TARIFF_CODE" nillable="true" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="22"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="FEMART_IMP_DUTY" nillable="true" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal">
+										<xs:totalDigits value="17"/>
+										<xs:fractionDigits value="2"/>
+										<xs:minExclusive value="-1000000000000000"/>
+										<xs:maxExclusive value="1000000000000000"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="FEMART_MASTER_ART_CODE" nillable="true" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="20"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

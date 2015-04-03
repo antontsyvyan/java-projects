@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GPA Module" default="zip">
+    
+	<property name="app.name" value="gpa" />
+	<property name="general.dir" value="../General" />
+	<property name="out.dir" value="../TEMP/gpa" />
+	<property name="dist.dir" value="dist" />
+	<property name="bin.dir" value="bin" />
+	<property name="conf.dir" value="conf" />
+	<property name="reports.dir" value="reports" />
+	<property name="log.dir" value="log" />
+	<property name="classes.dir" value="${out.dir}/classes/" />
+	<property name="source.dir" value="src/" />
+	<property name="lib.dir" value="lib" />
+	<property name="jre.dir" value="jre8" />
+	<property name="xsd.dir" value="xsd" />
+	<property name="launch4j.dir" location="E:/Program Files (x86)/Launch4j" />
+	<property name="app.location" value="E:/Development/GPA" />
+	<!-- Properties for release management -->
+	<property name="info.file" value="${source.dir}/com/foursoft/gpa/info/info.txt" description="name of the release information file" />
+	<property name="test.file" value="dashboard1.ico" description="name of the dummy file to retrieve info from CVS" />
+	<property name="cvs.root" value=":ext:axt@10.200.36.106:/cvsnl/CVSROOT_JAVA" description="repository label" />
+	
+	<path id="source.path">
+		<pathelement path="src" />
+	</path>
+	
+	<path id="lib.path">
+		<fileset dir="${general.dir}/${lib.dir}">
+		     <include name="**/*.jar"/>
+		</fileset>
+	</path>
+	
+	<target name="clean">
+	    <delete quiet="true" dir="${classes.dir}" />
+		<delete quiet="true" dir="${out.dir}" />
+		<delete quiet="true" dir="${dist.dir}" />
+				
+		<!-- File info.txt contained CVS status information will be created-->
+		<!-- File will be deleted after ear file creation-->
+		<!--
+		<echo message="Release information${line.separator}CVS status${line.separator}" file="${info.file}" />
+		<cvs command="status ${test.file}" output="${info.file}" append="true" cvsroot="${cvs.root}" />
+		<echo message="Release information has been created." />
+		<echo message="======" />
+		-->
+		 <loadfile property="cvs.tag" srcFile="CVS/Tag" failonerror="false">
+		        <filterchain>
+		            <striplinebreaks/>
+		            <tokenfilter>
+		                <replaceregex pattern="^T" replace="" />
+		                <replaceregex pattern="^D.*" replace="HEAD" />
+		            </tokenfilter>
+		        </filterchain>
+		    </loadfile>
+		    <!-- default to HEAD if the Tag file is missing -->
+		    <property name="cvs.tag" value="HEAD" />		    
+		    <echo file="${info.file}">${cvs.tag}</echo> 
+	</target>
+	
+	<target name="init" depends="clean">
+		<mkdir dir="${out.dir}" />
+		<mkdir dir="${classes.dir}" />
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${out.dir}/${reports.dir}" />
+	</target>
+	
+	<target name="compile-jasper" depends="compile-java">
+	    <taskdef name="jrc" classname="net.sf.jasperreports.ant.JRAntCompileTask">
+	    	<classpath refid="lib.path"/>
+	    </taskdef>		
+	    <jrc destdir="${out.dir}/${reports.dir}">
+	      <src>
+	        <fileset dir="${reports.dir}">
+	          <include name="**/*.jrxml"/>
+	        </fileset>
+	      </src>
+	     <classpath refid="lib.path"/>
+	   </jrc>
+	</target>
+	
+	<target name="compile-java" depends="init">
+	    <javac debug="true" destdir="${classes.dir}" deprecation="true" nowarn="true" includeantruntime="false" extdirs="${general.dir}/${lib.dir}:${general.dir}/${jre.dir}/lib/ext" >
+			<src refid="source.path" />
+			<classpath>
+				<fileset dir="${classes.dir}">
+					<include name="**/*.class" />
+				</fileset>
+			</classpath>
+		</javac>
+	
+	</target>
+	
+	<target name="jar" depends="compile-jasper">
+		<jar destfile="${dist.dir}/${app.name}.jar" manifest="${source.dir}/META-INF/manifest.mf">
+			<fileset dir="${classes.dir}">
+				<include name="**/*.class" />
+			</fileset>
+			<fileset dir="${source.dir}">
+				<include name="**/*.properties" />
+			</fileset>
+			<zipfileset dir="${source.dir}/META-INF" prefix="META-INF">
+				<include name="**/*.xml" />
+			</zipfileset>
+			<zipfileset dir="${source.dir}">
+				  <include name="**/*.fxml" />
+			</zipfileset>
+			<zipfileset dir="${source.dir}">
+				<include name="**/*.png" />
+			</zipfileset>
+			<zipfileset dir="${source.dir}">
+				<include name="**/*.jpg" />
+			</zipfileset>
+			<zipfileset dir="${source.dir}">
+				<include name="**/*.gif" />
+			</zipfileset>
+			<zipfileset dir="${source.dir}">
+				<include name="**/*.ico" />
+			</zipfileset>
+			<zipfileset dir="${source.dir}">
+				<include name="**/*.css" />
+			</zipfileset>
+			<zipfileset dir="${source.dir}">
+				<include name="**/info.txt" />
+			</zipfileset>
+		</jar>
+		<echo message="===============" />
+		<echo message="JAR file built." />
+		<echo message="===============" />
+		
+		<copy todir="${app.location}/lib">
+			<fileset dir="${dist.dir}">
+				<include name="${app.name}.jar" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${app.location}/${reports.dir}">
+			<fileset dir="${out.dir}/${reports.dir}">
+				<include name="**/*.jasper" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${app.location}/${reports.dir}/images">
+			<fileset dir="${reports.dir}/images">
+					<include name="**/*" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="exe" depends="jar">
+			<taskdef name="launch4j" classname="net.sf.launch4j.ant.Launch4jTask" classpath="${launch4j.dir}/lib/xstream.jar:${launch4j.dir}/launch4j.jar"/>
+		    <launch4j configFile="gpa.xml" />
+			<copy todir="${app.location}/bin">
+				<fileset dir="${out.dir}">
+					<include name="dashboardFX.exe" />
+				</fileset>
+			</copy>
+	</target>
+		
+	<target name="zip" depends="exe">
+	    <zip destfile="${dist.dir}/${app.name}.zip">
+	        <zipfileset dir="${general.dir}/${lib.dir}" prefix="${lib.dir}">
+				<include name="**/*"/>
+			</zipfileset>
+			<zipfileset dir="${dist.dir}" prefix="${lib.dir}">
+				<include name="*.jar"/>
+			</zipfileset>
+			<zipfileset dir="${conf.dir}" prefix="${conf.dir}">
+				<include name="**/*"/>
+			</zipfileset>
+			<zipfileset dir="${bin.dir}" prefix="${bin.dir}">
+				<include name="*.bat"/>
+			</zipfileset>
+	    	<zipfileset dir="${general.dir}/${bin.dir}" prefix="${bin.dir}">
+	    		<include name="*.exe"/>
+	    		<exclude name="prunsrv.exe"/>
+	    	</zipfileset>
+			<zipfileset dir="${general.dir}/${bin.dir}" prefix="">
+				<include name="prunsrv.exe"/>
+			</zipfileset>
+	    	<zipfileset dir="${out.dir}" prefix="${bin.dir}">
+	    		<include name="*.exe"/>
+	    	</zipfileset>
+			<zipfileset dir="${log.dir}" prefix="${log.dir}" >
+				<include name="**/*"/>
+			</zipfileset>
+	    	<zipfileset dir="${out.dir}/${reports.dir}" prefix="${reports.dir}">
+	    		<include name="**/*.jasper"/>
+	    	</zipfileset>
+	    	<zipfileset dir="${reports.dir}/images" prefix="${reports.dir}/images">
+	    		   <include name="**/*"/>
+	    	</zipfileset>
+	    	<zipfileset dir="${general.dir}/${jre.dir}" prefix="${jre.dir}" >
+	    		<include name="**/*"/>
+	    	</zipfileset>
+	    	<zipfileset dir="${xsd.dir}" prefix="${xsd.dir}" >
+	    		 <include name="*.xsd"/>
+	        </zipfileset>
+	    </zip>
+	    <echo message="=================" />
+	    <echo message="ZIP file created." />
+		<echo message="=================" />
+	</target>
+	
+	</project>
+
