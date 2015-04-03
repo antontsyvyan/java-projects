@@ -1,0 +1,74 @@
+.error-button{
+     -fx-base:#FF6347;
+     -fx-text-fill: white;
+}
+
+
+.error-field{
+     -fx-border-color: red;
+}
+
+.warning-button{
+     -fx-base:#F7C03A;
+     -fx-text-fill: white;
+}
+.shiny-orange {
+    -fx-background-color: 
+        linear-gradient(#ffd65b, #e68400),
+        linear-gradient(#ffef84, #f2ba44),
+        linear-gradient(#ffea6a, #efaa22),
+        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 3;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #654b00;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    /*-fx-padding: 10 20 10 20;*/
+}
+
+.round-red {
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 3;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+
+.nonexisting-file{
+	-fx-strikethrough:true;
+}
+.table-row-cell:selected {
+   -fx-background-color: grey; 
+}
+
+ .list-cell:selected{
+ 	-fx-background-color: white; 
+ }
+
+.proof-status{
+	-fx-text-fill: red;
+	-fx-border-color: red;
+	-fx-border-width:2;
+	-fx-border-radius:2;	
+}
+
+.final-status{
+	-fx-text-fill: green;
+	-fx-border-color: green;
+	-fx-border-width:2;
+	-fx-border-radius:2;	
+}
+
+.searchField {
+    -fx-background-image:url('../img/search.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left 7 center;
+}
+
+.clickableButton {
+  -fx-background-color:transparent;
+}
+
+.clickableButton:hover {
+  -fx-background-color:#dae7f3;
+}

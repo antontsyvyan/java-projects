@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="root" prefHeight="295.0" prefWidth="565.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.foursoft.gpa.clientfx.controller.ArticleMasterController">
+   <center>
+      <StackPane BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane fx:id="progressPane" opacity="0.74" style="-fx-background-color: #CDCDCD;" visible="false">
+               <center>
+                  <ImageView fitHeight="142.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                     <image>
+                        <Image url="@../img/busy.gif" />
+                     </image>
+                  </ImageView>
+               </center>
+            </BorderPane>
+            <Pane maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="customer" layoutX="143.0" layoutY="21.0" text="Label">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="21.0" text="Customer">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="description" layoutX="143.0" layoutY="48.0" text="Label">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="77.0" text="Description">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="48.0" text="Article">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="articleCode" layoutX="143.0" layoutY="77.0" text="Label">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="108.0" text="HS code">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tariffCode" layoutX="143.0" layoutY="106.0" prefHeight="25.0" prefWidth="380.0" />
+                  <Label layoutY="138.0" text="Duty rate">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dutyRate" alignment="CENTER_RIGHT" disable="true" layoutX="143.0" layoutY="135.0" prefHeight="25.0" prefWidth="73.0" />
+                  <VBox layoutX="-2.0" layoutY="183.0" spacing="20.0">
+                     <children>
+                        <HBox layoutX="-2.0" layoutY="183.0" spacing="30.0">
+                           <children>
+                              <Button fx:id="okButton" defaultButton="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="OK" />
+                              <Button fx:id="cancelButton" layoutX="-2.0" layoutY="183.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Cancel" />
+                           </children>
+                        </HBox>
+                        <HBox spacing="30.0">
+                           <children>
+                              <CheckBox fx:id="runInBatch" mnemonicParsing="false" text="Run in batch" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </BorderPane.margin>
+               <StackPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </StackPane.margin>
+            </Pane>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

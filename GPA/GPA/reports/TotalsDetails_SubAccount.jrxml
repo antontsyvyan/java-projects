@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TotalsDetails_SubAccount" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4bd318bd-9906-484a-b81a-36b5058b3df1">
+	<property name="ireport.zoom" value="2.593742460100015"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="account_id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="prefix" class="java.lang.String" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[select * from $P!{prefix}account
+where account_id=$P{account_id}]]>
+	</queryString>
+	<field name="account_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_eori_number" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_search_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_vat_number" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_name1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_name2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_address1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_address2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_postalcode" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_city" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_country_code" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_phone_number1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_phone_number2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_mobile_number1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_mobile_number2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_fax_number" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="currency_code" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incoterm_code" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_gpa_code" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_feeding_system" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account_declaration_type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acoount_vat_at_clearance" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="accountName" class="java.lang.String">
+		<variableExpression><![CDATA[$F{account_name1}]]></variableExpression>
+	</variable>
+	<variable name="accountCity" class="java.lang.String">
+		<variableExpression><![CDATA[$F{account_city}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="139" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="080ec485-0bfb-4e66-a5ba-39289a7cc285" x="214" y="11" width="305" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="d7d2c3f4-a90e-4917-a0be-7aa91b471cc5" x="32" y="12" width="182" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Naam en voorletters"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a2fb561e-2987-45db-a28d-117b37b791f8" x="223" y="13" width="297" height="16"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{account_name1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7e41bf90-1e2b-4875-8eac-f0cdb43fd66c" x="32" y="37" width="182" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Adres"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="d4d84d2b-c97d-491e-aa43-b25a302a606d" x="214" y="36" width="305" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="b51ccbc2-d942-4549-84e7-7e4eb694a959" x="223" y="39" width="292" height="16"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{account_address1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a14418fc-d176-4fa6-b4f7-0b227d9d0be0" x="32" y="63" width="182" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Postcode en woonplaats"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dbdb56bb-32ec-4e12-9886-b53d050fe6a7" x="33" y="118" width="182" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["EORI nummer (met volgnummer)"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="9c4edf69-b5a7-4a62-89a2-3a3e92bb63eb" x="215" y="116" width="305" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="dc908e60-0406-436c-af01-f173502c7f2a" x="223" y="119" width="292" height="16"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{account_eori_number}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="d1d048b7-0843-4e0d-81a3-36899c2a42f8" x="215" y="62" width="92" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="c9a1ea1d-bfe5-47a3-93b9-c392bdfa3a7a" x="223" y="65" width="84" height="16"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{account_postalcode}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="b5141b42-0c7b-4c35-b259-8a90ec146383" x="321" y="62" width="198" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="c35768fd-3473-48ce-aa68-51415725450b" x="331" y="65" width="179" height="16"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{account_city}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="aad30eee-49de-4121-8980-52885e55794d" x="33" y="91" width="182" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Telefoonnummer"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="fd8f38fa-38d1-4d60-880c-f4a35a009557" x="215" y="89" width="304" height="19"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="702ecf62-9f4e-4e49-b911-eb2c87c9e198" x="223" y="92" width="292" height="16"/>
+				<textElement>
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{account_phone_number1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="724.0" prefWidth="1062.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.foursoft.gpa.clientfx.controller.DashboardNewController">
+   <top>
+      <VBox>
+         <children>
+          <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+            <menus>
+              <Menu mnemonicParsing="false" text="File" />
+              <Menu mnemonicParsing="false" text="Edit" />
+              <Menu mnemonicParsing="false" text="Help" />
+            </menus>
+          </MenuBar>
+            <ImageView fitHeight="54.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/logo.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="3.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" />
+         </BorderPane.margin>
+      </VBox>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.97" orientation="VERTICAL">
+         <items>
+            <SplitPane dividerPositions="0.3" BorderPane.alignment="CENTER_LEFT">
+              <items>
+                  <BorderPane SplitPane.resizableWithParent="false">
+                     <center>
+                        <TreeView fx:id="maintenanceTreeView" BorderPane.alignment="CENTER" />
+                     </center>
+                     <top>
+                        <TextField fx:id="searchMenuTextField" prefHeight="30.0" prefWidth="100.0" promptText="Items filter" styleClass="searchField" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets bottom="2.0" />
+                           </BorderPane.margin>
+                           <padding>
+                              <Insets left="30.0" right="1.0" top="1.0" />
+                           </padding>
+                        </TextField>
+                     </top>
+                  </BorderPane>
+                  <SplitPane dividerPositions="0.762962962962963" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                        <AnchorPane fx:id="tabWrapPane">
+                           <children>
+                              <TabPane fx:id="bodyTabPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <TabPane fx:id="statusTabPane" minWidth="150.0" rotateGraphic="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" SplitPane.resizableWithParent="false" />
+                    </items>
+                  </SplitPane>
+              </items>
+               <BorderPane.margin>
+                  <Insets left="5.0" right="5.0" />
+               </BorderPane.margin>
+            </SplitPane>
+            <ScrollPane prefViewportHeight="16.0" prefViewportWidth="1050.0" SplitPane.resizableWithParent="false">
+               <content>
+                  <Pane fx:id="statusPane" />
+               </content>
+            </ScrollPane>
+         </items>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </BorderPane.margin>
+      </SplitPane>
+   </center>
+</BorderPane>

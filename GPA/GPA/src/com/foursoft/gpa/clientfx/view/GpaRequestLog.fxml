@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.foursoft.gpa.clientfx.controller.GpaRequestLogController">
+   <children>
+      <TableView fx:id="requestGrid" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-border-width: 0;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <columns>
+            <TableColumn fx:id="idColumn" prefWidth="65.0" text="ID" />
+            <TableColumn fx:id="typeColumn" minWidth="0.0" prefWidth="93.0" text="Type" />
+            <TableColumn fx:id="periodColumn" minWidth="6.0" prefWidth="99.0" text="Period" />
+            <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="171.0" text="Status" />
+            <TableColumn fx:id="detailsColumn" prefWidth="563.0" text="Details" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

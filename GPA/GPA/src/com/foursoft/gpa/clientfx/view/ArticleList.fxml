@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.foursoft.gpa.clientfx.controller.ArticleListController">
+   <top>
+      <HBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <ComboBox fx:id="customerSelect" prefWidth="150.0" />
+            <TextField fx:id="searchProduct" prefHeight="25.0" prefWidth="279.0" />
+            <Button mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="94.0" text="Search" />
+            <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="6.0" />
+            <Button mnemonicParsing="false" onAction="#addArticlePressed" text="Add Article">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <center>
+      <TableView fx:id="grid" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="accountColumn" prefWidth="150.0" text="Customer" />
+            <TableColumn id="articleNumberId" fx:id="articleNumberColumn" prefWidth="250.0" text="Product Nummer" />
+            <TableColumn fx:id="articleDescriptionColumn" prefWidth="350.0" text="Omschrijving" />
+            <TableColumn fx:id="tariffCodeColumn" maxWidth="-1.0" minWidth="200.0" prefWidth="-1.0" text="Tariff Code" />
+            <TableColumn fx:id="validFromColumn" prefWidth="100.0" text="Ingangsdatum" />            
+        </columns>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </TableView>
+   </center>
+</BorderPane>

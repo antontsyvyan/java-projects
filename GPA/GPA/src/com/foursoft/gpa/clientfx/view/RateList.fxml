@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.foursoft.gpa.clientfx.controller.RateListController">
+   <top>
+      <HBox prefHeight="39.0" prefWidth="945.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox minHeight="40.0" minWidth="320.0" prefHeight="39.0" prefWidth="316.0">
+               <children>
+                  <Label text="Period" />
+                  <ComboBox fx:id="periodCombo" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <Button fx:id="updateButton" mnemonicParsing="false" onAction="#buttonPressed" text="Update">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox fx:id="infoBox" spacing="10.0">
+               <opaqueInsets>
+                  <Insets left="30.0" />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="5.0" right="5.0" top="30.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <center>
+      <StackPane>
+         <children>
+            <BorderPane fx:id="progressPane" opacity="0.74" style="-fx-background-color: #CDCDCD;">
+               <center>
+                  <ImageView fitHeight="142.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                     <image>
+                        <Image url="@../img/busy.gif" />
+                     </image>
+                  </ImageView>
+               </center>
+            </BorderPane>
+            <TableView fx:id="grid" editable="true" BorderPane.alignment="CENTER">
+              <columns>
+                 <TableColumn fx:id="countryNameColumn" editable="false" prefWidth="197.0" text="Country" />
+                 <TableColumn fx:id="currencyNameColumn" editable="false" minWidth="0.0" prefWidth="152.0" text="Currency" />
+                 <TableColumn fx:id="currencyCodeColumn" editable="false" minWidth="0.0" prefWidth="94.0" text="Currency Code" />
+                 <TableColumn fx:id="rateColumn" minWidth="0.0" prefWidth="146.0" text="1 EUR=currency" />
+                 <TableColumn fx:id="reverseRateColumn" minWidth="0.0" prefWidth="163.0" text="1 currency=EUR" />
+                 <TableColumn fx:id="startDateColumn" editable="false" minWidth="0.0" prefWidth="91.0" text="Wijziging per" />
+              </columns>
+               <StackPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </StackPane.margin>
+            </TableView>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

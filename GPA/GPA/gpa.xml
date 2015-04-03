@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>true</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>.\lib\gpa.jar</jar>
+  <outfile>..\TEMP\gpa\dashboardFX.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>..</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <manifest></manifest>
+  <icon>.\dashboard1.ico</icon>
+  <classPath>
+    <mainClass>com.foursoft.gpa.clientfx.DashboardNew</mainClass>
+    <cp>.\lib\*.jar</cp>
+  </classPath>
+  <jre>
+    <path>..\jre8</path>
+    <bundledJre64Bit>true</bundledJre64Bit>
+    <minVersion>1.8.0</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+    <opt>-Dlog4j.configuration=file:.\conf\log4j.properties</opt>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.0.0.0</fileVersion>
+    <txtFileVersion>1.0</txtFileVersion>
+    <fileDescription>GPA Dashboard</fileDescription>
+    <copyright>(c) 2014 Kewill. All Rights Reserved</copyright>
+    <productVersion>1.0.0.0</productVersion>
+    <txtProductVersion>1.0</txtProductVersion>
+    <productName>GPA module</productName>
+    <companyName>Kewill</companyName>
+    <internalName>Dashboard FX</internalName>
+    <originalFilename>dashboardFX.exe</originalFilename>
+  </versionInfo>
+</launch4jConfig>

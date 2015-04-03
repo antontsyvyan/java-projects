@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/General/lib/mysql-connector-java-3.0.10-stable-bin.jar"/>
+	<classpathentry kind="lib" path="/General/lib/base.jar"/>
+	<classpathentry kind="lib" path="/General/lib/openedge.jar"/>
+	<classpathentry kind="lib" path="/General/lib/util.jar"/>
+	<classpathentry kind="lib" path="/General/lib/jasperreports-5.1.0.jar"/>
+	<classpathentry kind="lib" path="/General/lib/opencsv-2.3.jar"/>
+	<classpathentry kind="lib" path="/General/lib/controlsfx-8.0.5.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/General/jre8/lib/ext/jfxrt.jar"/>
+	<classpathentry kind="lib" path="/General/lib/commons-daemon-1.0.15.jar"/>
+	<classpathentry kind="lib" path="/General/lib/sax.jar"/>
+	<classpathentry kind="lib" path="/General/lib/commons-dbcp2-2.0.1.jar"/>
+	<classpathentry kind="lib" path="/General/lib/commons-pool2-2.3.jar"/>
+	<classpathentry kind="lib" path="/General/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="/General/lib/sqlite-jdbc-3.6.7.jar"/>
+	<classpathentry kind="lib" path="/General/lib/activemq-all-5.11.1.jar"/>
+	<classpathentry kind="output" path="temp"/>
+</classpath>
