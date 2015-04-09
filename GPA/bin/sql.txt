@@ -1,5 +1,0 @@
-INSERT INTO GPA.FEMINB 
-VALUES ('KAW', 5, 'NWG', '821', '2013-06-05', '120006', '11003360', 'NL567432', '2013-06-04', '*', 'INVOICE NO2 ', 1, '2013-06-04', 'US', 'US', 'ARTIKEL01', 'AIR FILTER', 'BOX', 600000, 1, 'AU', 125.0, 'EUR', 1.050, 0.95, 'FOB', 'USSFO', 'USD', 10.00, 'USD', 1.00, 'P', 'P', 'T', 5, 'BI',1, '', '', '', '2013-06-04', '', 'USCA18012011', '0', '', 'P', '2013-06-04', 1144, null, 0, 'BOX', 600000)
-
-
-update gpa.feminb set FEMINB_INT_STAT='P'
