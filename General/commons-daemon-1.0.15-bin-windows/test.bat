@@ -1,2 +1,0 @@
-prunsrv
-pause
